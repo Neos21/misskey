@@ -39,6 +39,12 @@ SPDX-License-Identifier: AGPL-3.0-only
 			<MkA v-if="$i != null && ($i.isAdmin || $i.isModerator)" v-tooltip.noDelay.right="i18n.ts.controlPanel" :class="$style.item" :activeClass="$style.active" to="/admin">
 				<i :class="$style.itemIcon" class="ti ti-dashboard ti-fw"></i><span :class="$style.itemText">{{ i18n.ts.controlPanel }}</span>
 			</MkA>
+			
+			<!-- カスタム絵文字登録用メニュー -->
+			<MkA v-tooltip.noDelay.right="i18n.ts.customEmojis" :class="$style.item" :activeClass="$style.active" to="/custom-emojis-manager">
+				<i :class="$style.itemIcon" class="ti ti-icons ti-fw"></i><span :class="$style.itemText">{{ i18n.ts.customEmojis }}</span>
+			</MkA>
+			
 			<button class="_button" :class="$style.item" @click="more">
 				<i :class="$style.itemIcon" class="ti ti-grid-dots ti-fw"></i><span :class="$style.itemText">{{ i18n.ts.more }}</span>
 				<span v-if="otherMenuItemIndicated" :class="$style.itemIndicator" class="_blink"><i class="_indicatorCircle"></i></span>
@@ -46,6 +52,16 @@ SPDX-License-Identifier: AGPL-3.0-only
 			<MkA v-tooltip.noDelay.right="i18n.ts.settings" :class="$style.item" :activeClass="$style.active" to="/settings">
 				<i :class="$style.itemIcon" class="ti ti-settings ti-fw"></i><span :class="$style.itemText">{{ i18n.ts.settings }}</span>
 			</MkA>
+			
+			<div :class="$style.divider"></div>
+			
+			<button class="_button" :class="$style.item" @click="openFavoriya">
+				<i :class="$style.itemIcon" class="ti ti-brand-facebook-filled ti-fw"></i><span :class="$style.itemText">Favoriya</span>
+			</button>
+			
+			<button class="_button" :class="$style.item" @click="openDiscord">
+				<i :class="$style.itemIcon" class="ti ti-brand-discord-filled ti-fw"></i><span :class="$style.itemText">Neo's Discord</span>
+			</button>
 		</div>
 		<div :class="$style.bottom">
 			<button v-tooltip.noDelay.right="i18n.ts.note" class="_button" :class="[$style.post]" data-cy-open-post-form @click="() => { os.post(); }">
@@ -127,6 +143,14 @@ function more(ev: MouseEvent) {
 	}, {
 		closed: () => dispose(),
 	});
+}
+
+function openFavoriya() {
+	window.open('https://favoriya.neos21.net', '_blank', 'noopener');
+}
+
+function openDiscord() {
+	window.open('https://discord.com/invite/xhkC2GMtef', '_blank', 'noopener');
 }
 </script>
 

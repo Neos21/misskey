@@ -31,6 +31,12 @@ SPDX-License-Identifier: AGPL-3.0-only
 	<MkA v-if="$i.isAdmin || $i.isModerator" v-click-anime class="item" activeClass="active" to="/admin" :behavior="settingsWindowed ? 'window' : null">
 		<i class="ti ti-dashboard ti-fw"></i><span class="text">{{ i18n.ts.controlPanel }}</span>
 	</MkA>
+	
+	<!-- カスタム絵文字登録用メニュー -->
+	<MkA v-click-anime class="item" activeClass="active" to="/custom-emojis-manager" :behavior="settingsWindowed ? 'window' : null">
+		<i class="ti ti-icons ti-fw"></i><span class="text">{{ i18n.ts.customEmojis }}</span>
+	</MkA>
+	
 	<button v-click-anime class="item _button" @click="more">
 		<i class="ti ti-dots ti-fw"></i><span class="text">{{ i18n.ts.more }}</span>
 		<span v-if="otherNavItemIndicated" class="indicator _blink"><i class="_indicatorCircle"></i></span>
@@ -38,6 +44,17 @@ SPDX-License-Identifier: AGPL-3.0-only
 	<MkA v-click-anime class="item" activeClass="active" to="/settings" :behavior="settingsWindowed ? 'window' : null">
 		<i class="ti ti-settings ti-fw"></i><span class="text">{{ i18n.ts.settings }}</span>
 	</MkA>
+	
+	<div class="divider"></div>
+	
+	<button v-click-anime class="item _button" @click="openFavoriya">
+		<i class="ti ti-brand-facebook-filled ti-fw"></i><span class="text">Favoriya</span>
+	</button>
+	
+	<button v-click-anime class="item _button" @click="openDiscord">
+		<i class="ti ti-brand-discord-filled ti-fw"></i><span class="text">Neo's Discord</span>
+	</button>
+	
 	<div class="divider"></div>
 	<div class="about">
 		<button v-click-anime class="item _button" @click="openInstanceMenu">
@@ -102,6 +119,14 @@ function openAccountMenu(ev: MouseEvent) {
 watch(defaultStore.reactiveState.menuDisplay, () => {
 	calcViewState();
 });
+
+function openFavoriya() {
+	window.open('https://favoriya.neos21.net', '_blank', 'noopener');
+}
+
+function openDiscord() {
+	window.open('https://discord.com/invite/xhkC2GMtef', '_blank', 'noopener');
+}
 
 </script>
 
