@@ -17806,6 +17806,7 @@ export type operations = {
         content: {
           'application/json': {
             count: number;
+            details: Array<{ username: string; lastActiveDate: Date; }>;
           };
         };
       };

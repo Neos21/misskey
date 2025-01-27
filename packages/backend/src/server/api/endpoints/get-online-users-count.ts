@@ -44,9 +44,22 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 			const count = await this.usersRepository.countBy({
 				lastActiveDate: MoreThan(new Date(Date.now() - USER_ONLINE_THRESHOLD)),
 			});
+			const details = await this.usersRepository.find({
+				select: {
+					username: true,
+					lastActiveDate: true,
+				},
+				where: {
+					lastActiveDate: MoreThan(new Date(Date.now() - USER_ONLINE_THRESHOLD)),
+				},
+				order: {
+					lastActiveDate: 'DESC',
+				},
+			});
 
 			return {
 				count,
+				details,
 			};
 		});
 	}
