@@ -8655,6 +8655,10 @@ export interface Locale extends ILocale {
          */
         "onlineUsers": string;
         /**
+         * オンラインユーザー詳細
+         */
+        "onlineUsersDetails": string;
+        /**
          * ジョブキュー
          */
         "jobQueue": string;
