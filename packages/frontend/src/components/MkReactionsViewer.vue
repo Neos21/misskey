@@ -24,7 +24,7 @@ import XReaction from '@/components/MkReactionsViewer.reaction.vue';
 import { defaultStore } from '@/store.js';
 
 const props = withDefaults(defineProps<{
-	note: Misskey.entities.Note;
+	note: Misskey.entities.Note & { myReactions: string[]; };
 	maxNumber?: number;
 }>(), {
 	maxNumber: Infinity,

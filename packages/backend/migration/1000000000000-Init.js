@@ -64,7 +64,6 @@ export class Init1000000000000 {
         await queryRunner.query(`CREATE INDEX "IDX_01f4581f114e0ebd2bbb876f0b" ON "note_reaction" ("createdAt") `);
         await queryRunner.query(`CREATE INDEX "IDX_13761f64257f40c5636d0ff95e" ON "note_reaction" ("userId") `);
         await queryRunner.query(`CREATE INDEX "IDX_45145e4953780f3cd5656f0ea6" ON "note_reaction" ("noteId") `);
-        await queryRunner.query(`CREATE UNIQUE INDEX "IDX_ad0c221b25672daf2df320a817" ON "note_reaction" ("userId", "noteId") `);
         await queryRunner.query(`CREATE TABLE "note_watching" ("id" character varying(32) NOT NULL, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "userId" character varying(32) NOT NULL, "noteId" character varying(32) NOT NULL, "noteUserId" character varying(32) NOT NULL, CONSTRAINT "PK_49286fdb23725945a74aa27d757" PRIMARY KEY ("id"))`);
         await queryRunner.query(`CREATE INDEX "IDX_318cdf42a9cfc11f479bd802bb" ON "note_watching" ("createdAt") `);
         await queryRunner.query(`CREATE INDEX "IDX_b0134ec406e8d09a540f818288" ON "note_watching" ("userId") `);
@@ -421,7 +420,6 @@ export class Init1000000000000 {
         await queryRunner.query(`DROP INDEX "IDX_b0134ec406e8d09a540f818288"`);
         await queryRunner.query(`DROP INDEX "IDX_318cdf42a9cfc11f479bd802bb"`);
         await queryRunner.query(`DROP TABLE "note_watching"`);
-        await queryRunner.query(`DROP INDEX "IDX_ad0c221b25672daf2df320a817"`);
         await queryRunner.query(`DROP INDEX "IDX_45145e4953780f3cd5656f0ea6"`);
         await queryRunner.query(`DROP INDEX "IDX_13761f64257f40c5636d0ff95e"`);
         await queryRunner.query(`DROP INDEX "IDX_01f4581f114e0ebd2bbb876f0b"`);

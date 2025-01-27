@@ -127,7 +127,6 @@ SPDX-License-Identifier: AGPL-3.0-only
 				</button>
 				<button ref="reactButton" :class="$style.footerButton" class="_button" @click="toggleReact()">
 					<i v-if="appearNote.reactionAcceptance === 'likeOnly' && appearNote.myReaction != null" class="ti ti-heart-filled" style="color: var(--MI_THEME-love);"></i>
-					<i v-else-if="appearNote.myReaction != null" class="ti ti-minus" style="color: var(--MI_THEME-accent);"></i>
 					<i v-else-if="appearNote.reactionAcceptance === 'likeOnly'" class="ti ti-heart"></i>
 					<i v-else class="ti ti-plus"></i>
 					<p v-if="(appearNote.reactionAcceptance === 'likeOnly' || defaultStore.state.showReactionsCount) && appearNote.reactionCount > 0" :class="$style.footerButtonCount">{{ number(appearNote.reactionCount) }}</p>
@@ -222,7 +221,7 @@ import { focusPrev, focusNext } from '@/scripts/focus.js';
 import { getAppearNote } from '@/scripts/get-appear-note.js';
 
 const props = withDefaults(defineProps<{
-	note: Misskey.entities.Note;
+	note: Misskey.entities.Note & { myReactions: string[] };
 	pinned?: boolean;
 	mock?: boolean;
 	withHardMute?: boolean;
@@ -508,26 +507,8 @@ function react(): void {
 	}
 }
 
-function undoReact(targetNote: Misskey.entities.Note): void {
-	const oldReaction = targetNote.myReaction;
-	if (!oldReaction) return;
-
-	if (props.mock) {
-		emit('removeReaction', oldReaction);
-		return;
-	}
-
-	misskeyApi('notes/reactions/delete', {
-		noteId: targetNote.id,
-	});
-}
-
 function toggleReact() {
-	if (appearNote.value.myReaction == null) {
-		react();
-	} else {
-		undoReact(appearNote.value);
-	}
+	react();
 }
 
 function onContextmenu(ev: MouseEvent): void {

@@ -23238,6 +23238,7 @@ export type operations = {
         'application/json': {
           /** Format: misskey:id */
           noteId: string;
+          reaction?: string;
         };
       };
     };
