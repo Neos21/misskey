@@ -9,7 +9,7 @@ import { common } from './common.js';
 import type * as Misskey from 'misskey-js';
 import type { Component } from 'vue';
 import { i18n } from '@/i18n.js';
-import { alert, confirm, popup, post, toast } from '@/os.js';
+import { alert, confirm, popup, post } from '@/os.js';
 import { useStream } from '@/stream.js';
 import * as sound from '@/scripts/sound.js';
 import { $i, signout, updateAccountPartial } from '@/account.js';
@@ -63,9 +63,7 @@ export async function mainBoot() {
 	emojiPicker.init();
 
 	if (isClientUpdated && $i) {
-		const { dispose } = popup(defineAsyncComponent(() => import('@/components/MkUpdated.vue')), {}, {
-			closed: () => dispose(),
-		});
+		console.log('Client Updated');
 	}
 
 	const stream = useStream();
