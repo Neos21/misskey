@@ -55,7 +55,10 @@ const tick = () => {
 	misskeyApiGet('get-online-users-count').then(res => {
 		onlineUsersCount.value = res.count;
 		onlineUsersDetails.value = res.details.map(detail => {
-			const jst = new Date(Date(detail.lastActiveDate) + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000));
+			const jst = new Date(Date(detail.lastActiveDate).getTime() + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000));
+			if (Number.isNaN(jst.getTime())) {
+				return '-';
+			}
 			detail.lastActiveDate = jst.getFullYear()
 				+ '-' + ('0' + (jst.getMonth() + 1)).slice(-2)
 				+ '-' + ('0' + jst.getDate()).slice(-2)
