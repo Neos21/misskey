@@ -55,16 +55,18 @@ const tick = () => {
 	misskeyApiGet('get-online-users-count').then(res => {
 		onlineUsersCount.value = res.count;
 		onlineUsersDetails.value = res.details.map(detail => {
-			const jst = new Date(Date(detail.lastActiveDate).getTime() + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000));
-			if (Number.isNaN(jst.getTime())) {
-				return '-';
-			}
-			detail.lastActiveDate = jst.getFullYear()
-				+ '-' + ('0' + (jst.getMonth() + 1)).slice(-2)
-				+ '-' + ('0' + jst.getDate()).slice(-2)
-				+ ' ' + ('0' + jst.getHours()).slice(-2)
-				+ ':' + ('0' + jst.getMinutes()).slice(-2)
-				+ ':' + ('0' + jst.getSeconds()).slice(-2);
+			detail.lastActiveDate = detail.lastActiveDate.replace((/-/g), '/').replace('T', ' ').replace('Z', '');
+			//const jst = new Date(new Date(detail.lastActiveDate).getTime() + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000));
+			//if (Number.isNaN(jst.getTime())) {
+			//	detail.lastActiveDate = '-';
+			//} else {
+			//	detail.lastActiveDate = jst.getFullYear()
+			//		+ '-' + ('0' + (jst.getMonth() + 1)).slice(-2)
+			//		+ '-' + ('0' + jst.getDate()).slice(-2)
+			//		+ ' ' + ('0' + jst.getHours()).slice(-2)
+			//		+ ':' + ('0' + jst.getMinutes()).slice(-2)
+			//		+ ':' + ('0' + jst.getSeconds()).slice(-2);
+			//}
 			return detail;
 		});
 	});
