@@ -10,6 +10,8 @@
         - `packages/misskey-js/src/nyaize.ts`
     - 「この投稿は迷惑になる可能性があります」ダイアログを無効化
         - `packages/frontend/src/components/MkPostForm.vue`
+    - 投稿直後に再度投稿フォームにフォーカスが当たるように変更
+        - `packages/frontend/src/components/MkPostForm.vue`
 - 2025-01-30
     - ページ上部の「チャンネル」アイコンを削除
         - `packages/frontend/src/pages/timeline.vue`
