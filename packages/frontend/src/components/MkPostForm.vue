@@ -849,6 +849,8 @@ async function post(ev?: MouseEvent) {
 			if (m === 0 && s === 0) {
 				claimAchievement('postedAt0min0sec');
 			}
+			
+			focus();
 		});
 	}).catch(err => {
 		posting.value = false;
