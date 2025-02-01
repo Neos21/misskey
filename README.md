@@ -3,8 +3,19 @@
 [Misskey](https://github.com/misskey-dev/misskey) をフォークして独自機能を付与して運営しています。
 
 
-## 変更した部分
+## 変更した主な部分
 
+- 2025-02-01
+    - `nyaize()` 関数を無効化
+        - `packages/misskey-js/src/nyaize.ts`
+- 2025-01-30
+    - ページ上部の「チャンネル」アイコンを削除
+        - `packages/frontend/src/pages/timeline.vue`
+- 2025-01-29
+    - バージョンアップ等のバナー通知が出ないように変更
+        - `packages/frontend/src/boot/main-boot.ts`
+    - 「ノート」ではなく「ツイート」と呼称するように変更
+        - `locales/ja-JP.yml`
 - 2025-01-27
     - `README.md` と `.github/FUNDING.yml` を更新
     - 「オンラインユーザー詳細」ウィジェットを追加
