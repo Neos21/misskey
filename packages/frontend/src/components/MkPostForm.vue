@@ -797,6 +797,10 @@ async function post(ev?: MouseEvent) {
 		} else {
 			clear();
 		}
+		setTimeout(() => {
+			console.log('Focus');
+			focus();
+		}, 1);
 		nextTick(() => {
 			deleteDraft();
 			emit('posted');
@@ -849,8 +853,6 @@ async function post(ev?: MouseEvent) {
 			if (m === 0 && s === 0) {
 				claimAchievement('postedAt0min0sec');
 			}
-			
-			focus();
 		});
 	}).catch(err => {
 		posting.value = false;
