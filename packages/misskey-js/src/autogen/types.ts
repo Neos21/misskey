@@ -17806,6 +17806,7 @@ export type operations = {
         content: {
           'application/json': {
             count: number;
+            details: Array<{ username: string; lastActiveDate: Date; }>;
           };
         };
       };
@@ -23238,6 +23239,7 @@ export type operations = {
         'application/json': {
           /** Format: misskey:id */
           noteId: string;
+          reaction?: string;
         };
       };
     };

@@ -1,49 +1,46 @@
-<div align="center">
-<a href="https://misskey-hub.net">
-	<img src="./assets/title_float.svg" alt="Misskey logo" style="border-radius:50%" width="300"/>
-</a>
+# [ねゃおすきー](https://misskey.neos21.net)
 
-**🌎 **Misskey** is an open source, federated social media platform that's free forever! 🚀**
+[Misskey](https://github.com/misskey-dev/misskey) をフォークして独自機能を付与して運営しています。
 
-[Learn more](https://misskey-hub.net/)
 
----
+## 変更した部分
 
-<a href="https://misskey-hub.net/servers/">
-		<img src="https://custom-icon-badges.herokuapp.com/badge/find_an-instance-acea31?logoColor=acea31&style=for-the-badge&logo=misskey&labelColor=363B40" alt="find an instance"/></a>
+- 2025-01-27
+    - `README.md` と `.github/FUNDING.yml` を更新
+    - 「オンラインユーザー詳細」ウィジェットを追加
+        - `package.json` : locale ファイルのキャッシュ更新のためにはバージョン番号アップが必要
+        - `locales/en-US.yml`
+        - `locales/ja-JP.yml`
+        - `locales/ja-KS.yml`
+        - `locales/index.d.ts`
+        - `packages/backend/src/server/api/endpoints/get-online-users-count.ts`
+        - `packages/frontend/src/widgets/WidgetOnlineUsersDetails.vue` : 新規追加
+        - `packages/frontend/src/widgets/index.ts`
+        - `packages/misskey-js/package.json`
+        - `packages/misskey-js/src/autogen/types.ts`
+    - 一つの投稿に対し複数リアクションを追加できるように変更
+        - `packages/backend/migration/1000000000000-Init.js` : `DROP INDEX "IDX_ad0c221b25672daf2df320a817";` する
+        - `packages/backend/src/core/ReactionService.ts`
+        - `packages/backend/src/core/entities/NoteEntityService.ts`
+        - `packages/backend/src/server/api/endpoints/notes/reactions/delete.ts`
+        - `packages/frontend/src/components/MkNote.vue`
+        - `packages/frontend/src/components/MkNoteDetailed.vue`
+        - `packages/frontend/src/components/MkReactionsViewer.reaction.vue`
+        - `packages/frontend/src/components/MkReactionsViewer.vue`
+        - `packages/misskey-js/src/autogen/types.ts`
+        - `packages/frontend/src/scripts/use-note-capture.ts`
+- 2025-01-25
+    - フロントエンドの `pnpm dev` スクリプトに関して `vite --host` オプションを追加
+        - `packages/frontend/package.json`
+    - サイドメニューに「カスタム絵文字」「Favoriya」「Neo's Discord」リンクを追加
+        - `packages/frontend/src/ui/_common_/navbar.vue`
+        - `packages/frontend/src/ui/classic.sidebar.vue`
+        - `packages/frontend/src/ui/_common_/navbar-for-mobile.vue`
+- 2025-01-22
+    - 未ログイン時トップページ右上の GitHub リンク先を変更
+        - `packages/frontend/src/ui/visitor.vue`
 
-<a href="https://misskey-hub.net/docs/for-admin/install/guides/">
-		<img src="https://custom-icon-badges.herokuapp.com/badge/create_an-instance-FBD53C?logoColor=FBD53C&style=for-the-badge&logo=server&labelColor=363B40" alt="create an instance"/></a>
 
-<a href="./CONTRIBUTING.md">
-		<img src="https://custom-icon-badges.herokuapp.com/badge/become_a-contributor-A371F7?logoColor=A371F7&style=for-the-badge&logo=git-merge&labelColor=363B40" alt="become a contributor"/></a>
+## Links
 
-<a href="https://discord.gg/Wp8gVStHW3">
-		<img src="https://custom-icon-badges.herokuapp.com/badge/join_the-community-5865F2?logoColor=5865F2&style=for-the-badge&logo=discord&labelColor=363B40" alt="join the community"/></a>
-
-<a href="https://www.patreon.com/syuilo">
-		<img src="https://custom-icon-badges.herokuapp.com/badge/become_a-patron-F96854?logoColor=F96854&style=for-the-badge&logo=patreon&labelColor=363B40" alt="become a patron"/></a>
-
-</div>
-
-## Thanks
-
-<a href="https://sentry.io/"><img src="https://github.com/misskey-dev/misskey/assets/4439005/98576556-222f-467a-94be-e98dbda1d852" height="30" alt="Sentry" /></a>
-
-Thanks to [Sentry](https://sentry.io/) for providing the error tracking platform that helps us catch unexpected errors.
-
-<a href="https://www.chromatic.com/"><img src="https://user-images.githubusercontent.com/321738/84662277-e3db4f80-af1b-11ea-88f5-91d67a5e59f6.png" height="30" alt="Chromatic" /></a>
-
-Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testing platform that helps us review UI changes and catch visual regressions.
-
-<a href="https://about.codecov.io/for/open-source/"><img src="https://about.codecov.io/wp-content/themes/codecov/assets/brand/sentry-cobranding/logos/codecov-by-sentry-logo.svg" height="30" alt="Codecov" /></a>
-
-Thanks to [Codecov](https://about.codecov.io/for/open-source/) for providing the code coverage platform that helps us improve our test coverage.
-
-<a href="https://crowdin.com/"><img src="https://user-images.githubusercontent.com/20679825/230709597-1299a011-171a-4294-a91e-355a9b37c672.svg" height="30" alt="Crowdin" /></a>
-
-Thanks to [Crowdin](https://crowdin.com/) for providing the localization platform that helps us translate Misskey into many languages.
-
-<a href="https://hub.docker.com/"><img src="https://user-images.githubusercontent.com/20679825/230148221-f8e73a32-a49b-47c3-9029-9a15c3824f92.png" height="30" alt="Docker" /></a>
-
-Thanks to [Docker](https://hub.docker.com/) for providing the container platform that helps us run Misskey in production.
+- [Neo's World](https://neos21.net/)

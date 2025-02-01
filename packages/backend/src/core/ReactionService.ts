@@ -11,7 +11,6 @@ import type { MiRemoteUser, MiUser } from '@/models/User.js';
 import type { MiNote } from '@/models/Note.js';
 import { IdService } from '@/core/IdService.js';
 import type { MiNoteReaction } from '@/models/NoteReaction.js';
-import { isDuplicateKeyValueError } from '@/misc/is-duplicate-key-value-error.js';
 import { GlobalEventService } from '@/core/GlobalEventService.js';
 import { NotificationService } from '@/core/NotificationService.js';
 import PerUserReactionsChart from '@/core/chart/charts/per-user-reactions.js';
@@ -171,26 +170,17 @@ export class ReactionService {
 			reaction,
 		};
 
-		try {
-			await this.noteReactionsRepository.insert(record);
-		} catch (e) {
-			if (isDuplicateKeyValueError(e)) {
-				const exists = await this.noteReactionsRepository.findOneByOrFail({
-					noteId: note.id,
-					userId: user.id,
-				});
+		const exists = await this.noteReactionsRepository.findOneBy({
+			noteId: note.id,
+			userId: user.id,
+			reaction: record.reaction,
+		});
 
-				if (exists.reaction !== reaction) {
-					// 別のリアクションがすでにされていたら置き換える
-					await this.delete(user, note);
-					await this.noteReactionsRepository.insert(record);
-				} else {
-					// 同じリアクションがすでにされていたらエラー
-					throw new IdentifiableError('51c42bb4-931a-456b-bff7-e5a8a70dd298');
-				}
-			} else {
-				throw e;
-			}
+		if (exists == null) {
+			await this.noteReactionsRepository.insert(record);
+		} else {
+			// 同じリアクションがすでにされていたらエラー
+			throw new IdentifiableError('51c42bb4-931a-456b-bff7-e5a8a70dd298');
 		}
 
 		// Increment reactions count
@@ -286,13 +276,21 @@ export class ReactionService {
 	}
 
 	@bindThis
-	public async delete(user: { id: MiUser['id']; host: MiUser['host']; isBot: MiUser['isBot']; }, note: MiNote) {
+	public async delete(user: { id: MiUser['id']; host: MiUser['host']; isBot: MiUser['isBot']; }, note: MiNote, reaction?: string) {
 		// if already unreacted
-		const exist = await this.noteReactionsRepository.findOneBy({
-			noteId: note.id,
-			userId: user.id,
-		});
-
+		let exist;
+		if (reaction == null) {
+			exist = await this.noteReactionsRepository.findOneBy({
+				noteId: note.id,
+				userId: user.id,
+			});
+		} else {
+			exist = await this.noteReactionsRepository.findOneBy({
+				noteId: note.id,
+				userId: user.id,
+				reaction: reaction.replace(/@./, ''),
+			});
+		}
 		if (exist == null) {
 			throw new IdentifiableError('60527ec9-b4cb-4a88-a6bd-32d3ad26817d', 'not reacted');
 		}

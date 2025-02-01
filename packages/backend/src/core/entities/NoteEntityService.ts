@@ -275,6 +275,29 @@ export class NoteEntityService implements OnModuleInit {
 	}
 
 	@bindThis
+	public async populateMyReactions(note: { id: MiNote['id']; reactions: MiNote['reactions']; reactionAndUserPairCache?: MiNote['reactionAndUserPairCache']; }, meId: MiUser['id'], _hint_?: { myReactions: Map<MiNote['id'], string | null>; }) {
+		const reactionsCount = Object.values(note.reactions).reduce((a, b) => a + b, 0);
+
+		if (reactionsCount === 0) return undefined;
+
+		// パフォーマンスのためノートが作成されてから2秒以上経っていない場合はリアクションを取得しない
+		if (this.idService.parse(note.id).date.getTime() + 2000 > Date.now()) {
+			return undefined;
+		}
+
+		const reactions = await this.noteReactionsRepository.findBy({
+			userId: meId,
+			noteId: note.id,
+		});
+
+		if (reactions.length > 0) {
+			return reactions.map(reaction => this.reactionService.convertLegacyReaction(reaction.reaction));
+		}
+
+		return undefined;
+	}
+
+	@bindThis
 	public async isVisibleForMe(note: MiNote, meId: MiUser['id'] | null): Promise<boolean> {
 		// This code must always be synchronized with the checks in generateVisibilityQuery.
 		// visibility が specified かつ自分が指定されていなかったら非表示
@@ -457,6 +480,7 @@ export class NoteEntityService implements OnModuleInit {
 						reactions: reactions,
 						reactionAndUserPairCache: reactionAndUserPairCache,
 					}, meId, options?._hint_),
+					myReactions: this.populateMyReactions(note, meId, options?._hint_),
 				} : {}),
 			} : {}),
 		});

@@ -2221,6 +2221,7 @@ _widgets:
   slideshow: "Slideshow"
   button: "Button"
   onlineUsers: "Online users"
+  onlineUsersDetails: "Online users details"
   jobQueue: "Job Queue"
   serverMetric: "Server metrics"
   aiscript: "AiScript console"

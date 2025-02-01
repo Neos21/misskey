@@ -14,13 +14,13 @@ export interface Locale extends ILocale {
      */
     "_lang_": string;
     /**
-     * ノートでつながるネットワーク
+     * ツイートでつながるネットワーク
      */
     "headlineMisskey": string;
     /**
-     * ようこそ！Misskeyは、オープンソースの分散型マイクロブログサービスです。
-     * 「ノート」を作成して、いま起こっていることを共有したり、あなたについて皆に発信しよう📡
-     * 「リアクション」機能で、皆のノートに素早く反応を追加することもできます👍
+     * ようこそ！ねゃおすきーは、オープンソースの分散型マイクロブログサービスです。
+     * 「ツイート」を作成して、いま起こっていることを共有したり、あなたについて皆に発信しよう📡
+     * 「リアクション」機能で、皆のツイートに素早く反応を追加することもできます👍
      * 新しい世界を探検しよう🚀
      */
     "introMisskey": string;
@@ -95,11 +95,11 @@ export interface Locale extends ILocale {
      */
     "enterUsername": string;
     /**
-     * {user}がリノート
+     * {user}がリツイート
      */
     "renotedBy": ParameterizedString<"user">;
     /**
-     * ノートはありません
+     * ツイートはありません
      */
     "noNotes": string;
     /**
@@ -219,7 +219,7 @@ export interface Locale extends ILocale {
      */
     "copyRemoteLink": string;
     /**
-     * リノートのリンクをコピー
+     * リツイートのリンクをコピー
      */
     "copyLinkRenote": string;
     /**
@@ -231,7 +231,7 @@ export interface Locale extends ILocale {
      */
     "deleteAndEdit": string;
     /**
-     * このノートを削除してもう一度編集しますか？このノートへのリアクション、リノート、返信も全て削除されます。
+     * このツイートを削除してもう一度編集しますか？このツイートへのリアクション、リツイート、返信も全て削除されます。
      */
     "deleteAndEditConfirm": string;
     /**
@@ -259,7 +259,7 @@ export interface Locale extends ILocale {
      */
     "copyUserId": string;
     /**
-     * ノートIDをコピー
+     * ツイートIDをコピー
      */
     "copyNoteId": string;
     /**
@@ -279,7 +279,7 @@ export interface Locale extends ILocale {
      */
     "searchUser": string;
     /**
-     * ユーザーのノートを検索
+     * ユーザーのツイートを検索
      */
     "searchThisUsersNotes": string;
     /**
@@ -367,11 +367,11 @@ export interface Locale extends ILocale {
      */
     "noLists": string;
     /**
-     * ノート
+     * ツイート
      */
     "note": string;
     /**
-     * ノート
+     * ツイート
      */
     "notes": string;
     /**
@@ -463,27 +463,27 @@ export interface Locale extends ILocale {
      */
     "enterEmoji": string;
     /**
-     * リノート
+     * リツイート
      */
     "renote": string;
     /**
-     * リノート解除
+     * リツイート解除
      */
     "unrenote": string;
     /**
-     * リノートしました。
+     * リツイートしました。
      */
     "renoted": string;
     /**
-     * {name} にリノートしました。
+     * {name} にリツイートしました。
      */
     "renotedToX": ParameterizedString<"name">;
     /**
-     * この投稿はリノートできません。
+     * この投稿はリツイートできません。
      */
     "cantRenote": string;
     /**
-     * リノートをリノートすることはできません。
+     * リツイートをリツイートすることはできません。
      */
     "cantReRenote": string;
     /**
@@ -491,7 +491,7 @@ export interface Locale extends ILocale {
      */
     "quote": string;
     /**
-     * チャンネル内リノート
+     * チャンネル内リツイート
      */
     "inChannelRenote": string;
     /**
@@ -499,15 +499,15 @@ export interface Locale extends ILocale {
      */
     "inChannelQuote": string;
     /**
-     * チャンネルにリノート
+     * チャンネルにリツイート
      */
     "renoteToChannel": string;
     /**
-     * 他のチャンネルにリノート
+     * 他のチャンネルにリツイート
      */
     "renoteToOtherChannel": string;
     /**
-     * ピン留めされたノート
+     * ピン留めされたツイート
      */
     "pinnedNote": string;
     /**
@@ -599,11 +599,11 @@ export interface Locale extends ILocale {
      */
     "unmute": string;
     /**
-     * リノートをミュート
+     * リツイートをミュート
      */
     "renoteMute": string;
     /**
-     * リノートのミュートを解除
+     * リツイートのミュートを解除
      */
     "renoteUnmute": string;
     /**
@@ -739,11 +739,11 @@ export interface Locale extends ILocale {
      */
     "flagAsCatDescription": string;
     /**
-     * タイムラインにノートへの返信を表示する
+     * タイムラインにツイートへの返信を表示する
      */
     "flagShowTimelineReplies": string;
     /**
-     * オンにすると、タイムラインにユーザーのノート以外にもそのユーザーの他のノートへの返信を表示します。
+     * オンにすると、タイムラインにユーザーのツイート以外にもそのユーザーの他のツイートへの返信を表示します。
      */
     "flagShowTimelineRepliesDescription": string;
     /**
@@ -1011,7 +1011,7 @@ export interface Locale extends ILocale {
      */
     "editProfile": string;
     /**
-     * このノートを削除しますか？
+     * このツイートを削除しますか？
      */
     "noteDeleteConfirm": string;
     /**
@@ -1603,7 +1603,7 @@ export interface Locale extends ILocale {
      */
     "pinnedClipId": string;
     /**
-     * ピン留めされたノート
+     * ピン留めされたツイート
      */
     "pinnedNotes": string;
     /**
@@ -1711,11 +1711,11 @@ export interface Locale extends ILocale {
      */
     "antennaKeywordsDescription": string;
     /**
-     * 新しいノートを通知する
+     * 新しいツイートを通知する
      */
     "notifyAntenna": string;
     /**
-     * ファイルが添付されたノートのみ
+     * ファイルが添付されたツイートのみ
      */
     "withFileAntenna": string;
     /**
@@ -1835,7 +1835,7 @@ export interface Locale extends ILocale {
      */
     "moderation": string;
     /**
-     * モデレーションノート
+     * モデレーションツイート
      */
     "moderationNote": string;
     /**
@@ -1843,7 +1843,7 @@ export interface Locale extends ILocale {
      */
     "moderationNoteDescription": string;
     /**
-     * モデレーションノートを追加する
+     * モデレーションツイートを追加する
      */
     "addModerationNote": string;
     /**
@@ -1967,7 +1967,7 @@ export interface Locale extends ILocale {
      */
     "retype": string;
     /**
-     * {user}のノート
+     * {user}のツイート
      */
     "noteOf": ParameterizedString<"user">;
     /**
@@ -2103,11 +2103,11 @@ export interface Locale extends ILocale {
      */
     "popup": string;
     /**
-     * ノートのアクションをホバー時のみ表示する
+     * ツイートのアクションをホバー時のみ表示する
      */
     "showNoteActionsOnlyHover": string;
     /**
-     * ノートのリアクション数を表示する
+     * ツイートのリアクション数を表示する
      */
     "showReactionsCount": string;
     /**
@@ -2223,11 +2223,11 @@ export interface Locale extends ILocale {
      */
     "numberOfDays": string;
     /**
-     * このノートを非表示
+     * このツイートを非表示
      */
     "hideThisNote": string;
     /**
-     * タイムラインにおすすめのノートを表示する
+     * タイムラインにおすすめのツイートを表示する
      */
     "showFeaturedNotesInTimeline": string;
     /**
@@ -2323,7 +2323,7 @@ export interface Locale extends ILocale {
      */
     "withRepliesByDefaultForNewlyFollowed": string;
     /**
-     * 新しいノートがあります
+     * 新しいツイートがあります
      */
     "newNoteRecived": string;
     /**
@@ -2371,7 +2371,7 @@ export interface Locale extends ILocale {
      */
     "details": string;
     /**
-     * リノートの詳細
+     * リツイートの詳細
      */
     "renoteDetails": string;
     /**
@@ -2763,7 +2763,7 @@ export interface Locale extends ILocale {
      */
     "wordMute": string;
     /**
-     * 指定した語句を含むノートを最小化します。最小化されたノートをクリックすることで表示することができます。
+     * 指定した語句を含むツイートを最小化します。最小化されたツイートをクリックすることで表示することができます。
      */
     "wordMuteDescription": string;
     /**
@@ -2775,7 +2775,7 @@ export interface Locale extends ILocale {
      */
     "showMutedWord": string;
     /**
-     * 指定した語句を含むノートを隠します。ワードミュートとは異なり、ノートは完全に表示されなくなります。
+     * 指定した語句を含むツイートを隠します。ワードミュートとは異なり、ツイートは完全に表示されなくなります。
      */
     "hardWordMuteDescription": string;
     /**
@@ -2895,7 +2895,7 @@ export interface Locale extends ILocale {
      */
     "reportAbuse": string;
     /**
-     * リノートを通報
+     * リツイートを通報
      */
     "reportAbuseRenote": string;
     /**
@@ -2903,7 +2903,7 @@ export interface Locale extends ILocale {
      */
     "reportAbuseOf": ParameterizedString<"name">;
     /**
-     * 通報理由の詳細を記入してください。対象のノートやページなどがある場合はそのURLも記入してください。
+     * 通報理由の詳細を記入してください。対象のツイートやページなどがある場合はそのURLも記入してください。
      */
     "fillAbuseReportDescription": string;
     /**
@@ -2943,7 +2943,7 @@ export interface Locale extends ILocale {
      */
     "editTheseSettingsMayBreakAccount": string;
     /**
-     * ノートのサーバー情報
+     * ツイートのサーバー情報
      */
     "instanceTicker": string;
     /**
@@ -2987,7 +2987,7 @@ export interface Locale extends ILocale {
      */
     "unclip": string;
     /**
-     * このノートはすでにクリップ「{name}」に含まれています。ノートをこのクリップから除外しますか？
+     * このツイートはすでにクリップ「{name}」に含まれています。ツイートをこのクリップから除外しますか？
      */
     "confirmToUnclipAlreadyClippedNote": ParameterizedString<"name">;
     /**
@@ -3011,7 +3011,7 @@ export interface Locale extends ILocale {
      */
     "accountInfo": string;
     /**
-     * ノートの数
+     * ツイートの数
      */
     "notesCount": string;
     /**
@@ -3019,7 +3019,7 @@ export interface Locale extends ILocale {
      */
     "repliesCount": string;
     /**
-     * リノートした数
+     * リツイートした数
      */
     "renotesCount": string;
     /**
@@ -3027,7 +3027,7 @@ export interface Locale extends ILocale {
      */
     "repliedCount": string;
     /**
-     * リノートされた数
+     * リツイートされた数
      */
     "renotedCount": string;
     /**
@@ -3075,11 +3075,11 @@ export interface Locale extends ILocale {
      */
     "noCrawle": string;
     /**
-     * 外部の検索エンジンにあなたのユーザーページ、ノート、Pagesなどのコンテンツを登録(インデックス)しないよう要求します。
+     * 外部の検索エンジンにあなたのユーザーページ、ツイート、Pagesなどのコンテンツを登録(インデックス)しないよう要求します。
      */
     "noCrawleDescription": string;
     /**
-     * フォローを承認制にしても、ノートの公開範囲を「フォロワー」にしない限り、誰でもあなたのノートを見ることができます。
+     * フォローを承認制にしても、ツイートの公開範囲を「フォロワー」にしない限り、誰でもあなたのツイートを見ることができます。
      */
     "lockedAccountInfo": string;
     /**
@@ -3111,7 +3111,7 @@ export interface Locale extends ILocale {
      */
     "emailVerified": string;
     /**
-     * お気に入りノートの数
+     * お気に入りツイートの数
      */
     "noteFavoritesCount": string;
     /**
@@ -3159,7 +3159,7 @@ export interface Locale extends ILocale {
      */
     "makeExplorableDescription": string;
     /**
-     * タイムラインのノートを離して表示
+     * タイムラインのツイートを離して表示
      */
     "showGapBetweenNotesInTimeline": string;
     /**
@@ -3207,7 +3207,7 @@ export interface Locale extends ILocale {
      */
     "nUsers": ParameterizedString<"n">;
     /**
-     * {n}ノート
+     * {n}ツイート
      */
     "nNotes": ParameterizedString<"n">;
     /**
@@ -3375,7 +3375,7 @@ export interface Locale extends ILocale {
      */
     "addDescription": string;
     /**
-     * 個々のノートのメニューから「ピン留め」を選択することで、ここにノートを表示しておくことができます。
+     * 個々のツイートのメニューから「ピン留め」を選択することで、ここにツイートを表示しておくことができます。
      */
     "userPagePinTip": string;
     /**
@@ -3503,7 +3503,7 @@ export interface Locale extends ILocale {
      */
     "popularPosts": string;
     /**
-     * ノートで共有
+     * ツイートで共有
      */
     "shareWithNote": string;
     /**
@@ -3595,7 +3595,7 @@ export interface Locale extends ILocale {
      */
     "learnMore": string;
     /**
-     * Misskeyが更新されました！
+     * ねゃおすきーが更新されました！
      */
     "misskeyUpdated": string;
     /**
@@ -4243,11 +4243,11 @@ export interface Locale extends ILocale {
      */
     "thisPostMayBeAnnoyingIgnore": string;
     /**
-     * リノートのスマート省略
+     * リツイートのスマート省略
      */
     "collapseRenotes": string;
     /**
-     * リアクションやリノートをしたことがあるノートをたたんで表示します。
+     * リアクションやリツイートをしたことがあるツイートをたたんで表示します。
      */
     "collapseRenotesDescription": string;
     /**
@@ -4335,7 +4335,7 @@ export interface Locale extends ILocale {
      */
     "sensitiveWords": string;
     /**
-     * 設定したワードが含まれるノートの公開範囲をホームにします。改行で区切って複数設定できます。
+     * 設定したワードが含まれるツイートの公開範囲をホームにします。改行で区切って複数設定できます。
      */
     "sensitiveWordsDescription": string;
     /**
@@ -4347,7 +4347,7 @@ export interface Locale extends ILocale {
      */
     "prohibitedWords": string;
     /**
-     * 設定したワードが含まれるノートを投稿しようとした際、エラーとなるようにします。改行で区切って複数設定できます。
+     * 設定したワードが含まれるツイートを投稿しようとした際、エラーとなるようにします。改行で区切って複数設定できます。
      */
     "prohibitedWordsDescription": string;
     /**
@@ -4363,7 +4363,7 @@ export interface Locale extends ILocale {
      */
     "hiddenTagsDescription": string;
     /**
-     * ノート検索は利用できません。
+     * ツイート検索は利用できません。
      */
     "notesSearchNotAvailable": string;
     /**
@@ -4407,7 +4407,7 @@ export interface Locale extends ILocale {
      */
     "enableStatsForFederatedInstances": string;
     /**
-     * ノートのアクションにクリップを追加
+     * ツイートのアクションにクリップを追加
      */
     "showClipButtonInNoteFooter": string;
     /**
@@ -4419,7 +4419,7 @@ export interface Locale extends ILocale {
      */
     "limitWidthOfReaction": string;
     /**
-     * ノートIDまたはURL
+     * ツイートIDまたはURL
      */
     "noteIdOrUrl": string;
     /**
@@ -4475,7 +4475,7 @@ export interface Locale extends ILocale {
      */
     "reactionsList": string;
     /**
-     * リノート一覧
+     * リツイート一覧
      */
     "renotesList": string;
     /**
@@ -4539,7 +4539,7 @@ export interface Locale extends ILocale {
      */
     "preservedUsernamesDescription": string;
     /**
-     * このファイルからノートを作成
+     * このファイルからツイートを作成
      */
     "createNoteFromTheFile": string;
     /**
@@ -4567,7 +4567,7 @@ export interface Locale extends ILocale {
      */
     "thisChannelArchived": string;
     /**
-     * ノートの表示
+     * ツイートの表示
      */
     "displayOfNote": string;
     /**
@@ -4583,7 +4583,7 @@ export interface Locale extends ILocale {
      */
     "preventAiLearning": string;
     /**
-     * 外部の文章生成AIや画像生成AIに対して、投稿したノートや画像などのコンテンツを学習の対象にしないように要求します。これはnoaiフラグをHTMLレスポンスに含めることによって実現されますが、この要求に従うかはそのAI次第であるため、学習を完全に防止するものではありません。
+     * 外部の文章生成AIや画像生成AIに対して、投稿したツイートや画像などのコンテンツを学習の対象にしないように要求します。これはnoaiフラグをHTMLレスポンスに含めることによって実現されますが、この要求に従うかはそのAI次第であるため、学習を完全に防止するものではありません。
      */
     "preventAiLearningDescription": string;
     /**
@@ -4779,7 +4779,7 @@ export interface Locale extends ILocale {
      */
     "replies": string;
     /**
-     * リノート
+     * リツイート
      */
     "renotes": string;
     /**
@@ -4823,7 +4823,7 @@ export interface Locale extends ILocale {
      */
     "dateAndTime": string;
     /**
-     * リノートを表示
+     * リツイートを表示
      */
     "showRenotes": string;
     /**
@@ -5067,7 +5067,7 @@ export interface Locale extends ILocale {
      */
     "hemisphere": string;
     /**
-     * センシティブなファイルを含むノートを表示
+     * センシティブなファイルを含むツイートを表示
      */
     "withSensitive": string;
     /**
@@ -5159,11 +5159,11 @@ export interface Locale extends ILocale {
      */
     "genEmbedCode": string;
     /**
-     * このユーザーのノート一覧
+     * このユーザーのツイート一覧
      */
     "noteOfThisUser": string;
     /**
-     * これ以上このクリップにノートを追加できません。
+     * これ以上このクリップにツイートを追加できません。
      */
     "clipNoteLimitExceeded": string;
     /**
@@ -5260,11 +5260,11 @@ export interface Locale extends ILocale {
          */
         "requireSigninToViewContents": string;
         /**
-         * あなたが作成した全てのノートなどのコンテンツを表示するのにログインを必須にします。クローラーに情報が収集されるのを防ぐ効果が期待できます。
+         * あなたが作成した全てのツイートなどのコンテンツを表示するのにログインを必須にします。クローラーに情報が収集されるのを防ぐ効果が期待できます。
          */
         "requireSigninToViewContentsDescription1": string;
         /**
-         * URLプレビュー(OGP)、Webページへの埋め込み、ノートの引用に対応していないサーバーからの表示も不可になります。
+         * URLプレビュー(OGP)、Webページへの埋め込み、ツイートの引用に対応していないサーバーからの表示も不可になります。
          */
         "requireSigninToViewContentsDescription2": string;
         /**
@@ -5272,31 +5272,31 @@ export interface Locale extends ILocale {
          */
         "requireSigninToViewContentsDescription3": string;
         /**
-         * 過去のノートをフォロワーのみ表示可能にする
+         * 過去のツイートをフォロワーのみ表示可能にする
          */
         "makeNotesFollowersOnlyBefore": string;
         /**
-         * この機能が有効になっている間、設定された日時より過去、または設定された時間を経過しているノートがフォロワーのみ表示可能になります。無効に戻すと、ノートの公開状態も元に戻ります。
+         * この機能が有効になっている間、設定された日時より過去、または設定された時間を経過しているツイートがフォロワーのみ表示可能になります。無効に戻すと、ツイートの公開状態も元に戻ります。
          */
         "makeNotesFollowersOnlyBeforeDescription": string;
         /**
-         * 過去のノートを非公開化する
+         * 過去のツイートを非公開化する
          */
         "makeNotesHiddenBefore": string;
         /**
-         * この機能が有効になっている間、設定された日時より過去、または設定された時間を経過しているノートが自分のみ表示可能(非公開化)になります。無効に戻すと、ノートの公開状態も元に戻ります。
+         * この機能が有効になっている間、設定された日時より過去、または設定された時間を経過しているツイートが自分のみ表示可能(非公開化)になります。無効に戻すと、ツイートの公開状態も元に戻ります。
          */
         "makeNotesHiddenBeforeDescription": string;
         /**
-         * リモートサーバーに連合されたノートには効果が及ばない場合があります。
+         * リモートサーバーに連合されたツイートには効果が及ばない場合があります。
          */
         "mayNotEffectForFederatedNotes": string;
         /**
-         * 指定した時間を経過しているノート
+         * 指定した時間を経過しているツイート
          */
         "notesHavePassedSpecifiedPeriod": string;
         /**
-         * 指定した日時より前のノート
+         * 指定した日時より前のツイート
          */
         "notesOlderThanSpecifiedDateAndTime": string;
     };
@@ -5554,11 +5554,11 @@ export interface Locale extends ILocale {
         };
         "_note": {
             /**
-             * ノートって何？
+             * ツイートって何？
              */
             "title": string;
             /**
-             * Misskeyでの投稿は「ノート」と呼びます。ノートはタイムラインに時系列で並んでいて、リアルタイムで更新されていきます。
+             * ねゃおすきーでの投稿は「ツイート」と呼びます。ツイートはタイムラインに時系列で並んでいて、リアルタイムで更新されていきます。
              */
             "description": string;
             /**
@@ -5566,7 +5566,7 @@ export interface Locale extends ILocale {
              */
             "reply": string;
             /**
-             * そのノートを自分のタイムラインに流して共有することができます。テキストを追加して引用することも可能です。
+             * そのツイートを自分のタイムラインに流して共有することができます。テキストを追加して引用することも可能です。
              */
             "renote": string;
             /**
@@ -5574,7 +5574,7 @@ export interface Locale extends ILocale {
              */
             "reaction": string;
             /**
-             * ノートの詳細を表示したり、リンクをコピーしたりなどの様々な操作が行えます。
+             * ツイートの詳細を表示したり、リンクをコピーしたりなどの様々な操作が行えます。
              */
             "menu": string;
         };
@@ -5584,11 +5584,11 @@ export interface Locale extends ILocale {
              */
             "title": string;
             /**
-             * ノートには「リアクション」をつけることができます。「いいね」では伝わらないニュアンスも、リアクションで簡単・気軽に表現できます。
+             * ツイートには「リアクション」をつけることができます。「いいね」では伝わらないニュアンスも、リアクションで簡単・気軽に表現できます。
              */
             "description": string;
             /**
-             * リアクションは、ノートの「＋」ボタンをクリックするとつけられます。試しにこのサンプルのノートにリアクションをつけてみてください！
+             * リアクションは、ツイートの「＋」ボタンをクリックするとつけられます。試しにこのサンプルのツイートにリアクションをつけてみてください！
              */
             "letsTryReacting": string;
             /**
@@ -5596,7 +5596,7 @@ export interface Locale extends ILocale {
              */
             "reactToContinue": string;
             /**
-             * あなたのノートが誰かにリアクションされると、リアルタイムで通知を受け取ります。
+             * あなたのツイートが誰かにリアクションされると、リアルタイムで通知を受け取ります。
              */
             "reactNotification": string;
             /**
@@ -5640,16 +5640,16 @@ export interface Locale extends ILocale {
         };
         "_postNote": {
             /**
-             * ノートの投稿設定
+             * ツイートの投稿設定
              */
             "title": string;
             /**
-             * Misskeyにノートを投稿する際には、様々なオプションの設定が可能です。投稿フォームはこのようになっています。
+             * Misskeyにツイートを投稿する際には、様々なオプションの設定が可能です。投稿フォームはこのようになっています。
              */
             "description1": string;
             "_visibility": {
                 /**
-                 * ノートを表示できる相手を制限できます。
+                 * ツイートを表示できる相手を制限できます。
                  */
                 "description": string;
                 /**
@@ -5657,11 +5657,11 @@ export interface Locale extends ILocale {
                  */
                 "public": string;
                 /**
-                 * ホームタイムラインのみに公開。フォロワー・プロフィールを見に来た人・リノートから、他のユーザーも見ることができます。
+                 * ホームタイムラインのみに公開。フォロワー・プロフィールを見に来た人・リツイートから、他のユーザーも見ることができます。
                  */
                 "home": string;
                 /**
-                 * フォロワーにのみ公開。本人以外がリノートすることはできず、またフォロワー以外は閲覧できません。
+                 * フォロワーにのみ公開。本人以外がリツイートすることはできず、またフォロワー以外は閲覧できません。
                  */
                 "followers": string;
                 /**
@@ -5677,7 +5677,7 @@ export interface Locale extends ILocale {
                  */
                 "doNotSendConfidencialOnDirect2": string;
                 /**
-                 * 他のサーバーに投稿を連合しません。上記の公開範囲に関わらず、他のサーバーのユーザーは、この設定がついたノートを直接閲覧することができなくなります。
+                 * 他のサーバーに投稿を連合しません。上記の公開範囲に関わらず、他のサーバーのユーザーは、この設定がついたツイートを直接閲覧することができなくなります。
                  */
                 "localOnly": string;
             };
@@ -5701,7 +5701,7 @@ export interface Locale extends ILocale {
                     "note": string;
                 };
                 /**
-                 * サーバーのガイドラインにより必要とされるノートに指定したり、ネタバレ投稿やセンシティブな文章を自主規制したりするときに使います。
+                 * サーバーのガイドラインにより必要とされるツイートに指定したり、ネタバレ投稿やセンシティブな文章を自主規制したりするときに使います。
                  */
                 "useCases": string;
             };
@@ -5878,7 +5878,7 @@ export interface Locale extends ILocale {
          * 新しいアカウントへ移行します。
          * 　・フォロワーが新しいアカウントを自動でフォローします
          * 　・このアカウントからのフォローは全て解除されます
-         * 　・このアカウントではノートの作成などができなくなります
+         * 　・このアカウントではツイートの作成などができなくなります
          *
          * フォロワーの移行は自動ですが、フォローの移行は手動で行う必要があります。移行前にこのアカウントでフォローエクスポートし、移行後すぐに移行先アカウントでインポートを行なってください。
          * リスト・ミュート・ブロックについても同様ですので、手動で移行する必要があります。
@@ -5927,7 +5927,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * 初めてノートを投稿した
+                 * 初めてツイートを投稿した
                  */
                 "description": string;
                 /**
@@ -5937,141 +5937,141 @@ export interface Locale extends ILocale {
             };
             "_notes10": {
                 /**
-                 * いくつかのノート
+                 * いくつかのツイート
                  */
                 "title": string;
                 /**
-                 * ノートを10回投稿した
+                 * ツイートを10回投稿した
                  */
                 "description": string;
             };
             "_notes100": {
                 /**
-                 * たくさんのノート
+                 * たくさんのツイート
                  */
                 "title": string;
                 /**
-                 * ノートを100回投稿した
+                 * ツイートを100回投稿した
                  */
                 "description": string;
             };
             "_notes500": {
                 /**
-                 * ノートまみれ
+                 * ツイートまみれ
                  */
                 "title": string;
                 /**
-                 * ノートを500回投稿した
+                 * ツイートを500回投稿した
                  */
                 "description": string;
             };
             "_notes1000": {
                 /**
-                 * ノートの山
+                 * ツイートの山
                  */
                 "title": string;
                 /**
-                 * ノートを1,000回投稿した
+                 * ツイートを1,000回投稿した
                  */
                 "description": string;
             };
             "_notes5000": {
                 /**
-                 * 湧き出るノート
+                 * 湧き出るツイート
                  */
                 "title": string;
                 /**
-                 * ノートを5,000回投稿した
+                 * ツイートを5,000回投稿した
                  */
                 "description": string;
             };
             "_notes10000": {
                 /**
-                 * スーパーノート
+                 * スーパーツイート
                  */
                 "title": string;
                 /**
-                 * ノートを10,000回投稿した
+                 * ツイートを10,000回投稿した
                  */
                 "description": string;
             };
             "_notes20000": {
                 /**
-                 * ニードモアノート
+                 * ニードモアツイート
                  */
                 "title": string;
                 /**
-                 * ノートを20,000回投稿した
+                 * ツイートを20,000回投稿した
                  */
                 "description": string;
             };
             "_notes30000": {
                 /**
-                 * ノートノートノート
+                 * ツイートツイートツイート
                  */
                 "title": string;
                 /**
-                 * ノートを30,000回投稿した
+                 * ツイートを30,000回投稿した
                  */
                 "description": string;
             };
             "_notes40000": {
                 /**
-                 * ノート工場
+                 * ツイート工場
                  */
                 "title": string;
                 /**
-                 * ノートを40,000回投稿した
+                 * ツイートを40,000回投稿した
                  */
                 "description": string;
             };
             "_notes50000": {
                 /**
-                 * ノートの惑星
+                 * ツイートの惑星
                  */
                 "title": string;
                 /**
-                 * ノートを50,000回投稿した
+                 * ツイートを50,000回投稿した
                  */
                 "description": string;
             };
             "_notes60000": {
                 /**
-                 * ノートクエーサー
+                 * ツイートクエーサー
                  */
                 "title": string;
                 /**
-                 * ノートを60,000回投稿した
+                 * ツイートを60,000回投稿した
                  */
                 "description": string;
             };
             "_notes70000": {
                 /**
-                 * ブラックノートホール
+                 * ブラックツイートホール
                  */
                 "title": string;
                 /**
-                 * ノートを70,000回投稿した
+                 * ツイートを70,000回投稿した
                  */
                 "description": string;
             };
             "_notes80000": {
                 /**
-                 * ノートギャラクシー
+                 * ツイートギャラクシー
                  */
                 "title": string;
                 /**
-                 * ノートを80,000回投稿した
+                 * ツイートを80,000回投稿した
                  */
                 "description": string;
             };
             "_notes90000": {
                 /**
-                 * ノートバース
+                 * ツイートバース
                  */
                 "title": string;
                 /**
-                 * ノートを90,000回投稿した
+                 * ツイートを90,000回投稿した
                  */
                 "description": string;
             };
@@ -6081,7 +6081,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * ノートを100,000回投稿した
+                 * ツイートを100,000回投稿した
                  */
                 "description": string;
                 /**
@@ -6201,7 +6201,7 @@ export interface Locale extends ILocale {
                  */
                 "description": string;
                 /**
-                 * 諸君、私はノートが好きだ
+                 * 諸君、私はツイートが好きだ
                  */
                 "flavor": string;
             };
@@ -6227,7 +6227,7 @@ export interface Locale extends ILocale {
             };
             "_login800": {
                 /**
-                 * ノートマスターⅠ
+                 * ツイートマスターⅠ
                  */
                 "title": string;
                 /**
@@ -6237,7 +6237,7 @@ export interface Locale extends ILocale {
             };
             "_login900": {
                 /**
-                 * ノートマスターⅡ
+                 * ツイートマスターⅡ
                  */
                 "title": string;
                 /**
@@ -6247,7 +6247,7 @@ export interface Locale extends ILocale {
             };
             "_login1000": {
                 /**
-                 * ノートマスターⅢ
+                 * ツイートマスターⅢ
                  */
                 "title": string;
                 /**
@@ -6265,7 +6265,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * 初めてノートをクリップした
+                 * 初めてツイートをクリップした
                  */
                 "description": string;
             };
@@ -6275,7 +6275,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * 初めてノートをお気に入りに登録した
+                 * 初めてツイートをお気に入りに登録した
                  */
                 "description": string;
             };
@@ -6285,7 +6285,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * 自分のノートが他の人からお気に入りに登録された
+                 * 自分のツイートが他の人からお気に入りに登録された
                  */
                 "description": string;
             };
@@ -6513,7 +6513,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * 深夜にノートを投稿した
+                 * 深夜にツイートを投稿した
                  */
                 "description": string;
                 /**
@@ -6527,7 +6527,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * 0分0秒にノートを投稿した
+                 * 0分0秒にツイートを投稿した
                  */
                 "description": string;
                 /**
@@ -6541,7 +6541,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * 自分のノートを引用した
+                 * 自分のツイートを引用した
                  */
                 "description": string;
             };
@@ -6601,7 +6601,7 @@ export interface Locale extends ILocale {
                  */
                 "title": string;
                 /**
-                 * 100文字以上のテキストを含むノートに投稿されてから3秒以内にリアクションした
+                 * 100文字以上のテキストを含むツイートに投稿されてから3秒以内にリアクションした
                  */
                 "description": string;
             };
@@ -6918,7 +6918,7 @@ export interface Locale extends ILocale {
              */
             "canPublicNote": string;
             /**
-             * ノート内の最大メンション数
+             * ツイート内の最大メンション数
              */
             "mentionMax": string;
             /**
@@ -6958,7 +6958,7 @@ export interface Locale extends ILocale {
              */
             "canUpdateBioMedia": string;
             /**
-             * ノートのピン留めの最大数
+             * ツイートのピン留めの最大数
              */
             "pinMax": string;
             /**
@@ -6978,7 +6978,7 @@ export interface Locale extends ILocale {
              */
             "clipMax": string;
             /**
-             * クリップ内のノートの最大数
+             * クリップ内のツイートの最大数
              */
             "noteEachClipsMax": string;
             /**
@@ -7002,7 +7002,7 @@ export interface Locale extends ILocale {
              */
             "canHideAds": string;
             /**
-             * ノート検索の利用
+             * ツイート検索の利用
              */
             "canSearchNotes": string;
             /**
@@ -7245,7 +7245,7 @@ export interface Locale extends ILocale {
          */
         "adsSettings": string;
         /**
-         * リアルタイム更新中に広告を配信する間隔（ノートの個数）
+         * リアルタイム更新中に広告を配信する間隔（ツイートの個数）
          */
         "notesPerOneAd": string;
         /**
@@ -7551,7 +7551,7 @@ export interface Locale extends ILocale {
          */
         "nameOnly": string;
         /**
-         * チャンネル外へのリノートと引用リノートを許可する
+         * チャンネル外へのリツイートと引用リツイートを許可する
          */
         "allowRenoteToExternal": string;
     };
@@ -7589,7 +7589,7 @@ export interface Locale extends ILocale {
     };
     "_instanceMute": {
         /**
-         * ミュートしたサーバーのユーザーへの返信を含めて、設定したサーバーの全てのノートとRenoteをミュートします。
+         * ミュートしたサーバーのユーザーへの返信を含めて、設定したサーバーの全てのツイートとRenoteをミュートします。
          */
         "instanceMuteDescription": string;
         /**
@@ -7597,7 +7597,7 @@ export interface Locale extends ILocale {
          */
         "instanceMuteDescription2": string;
         /**
-         * 設定したサーバーのノートを隠します。
+         * 設定したサーバーのツイートを隠します。
          */
         "title": string;
         /**
@@ -7883,11 +7883,11 @@ export interface Locale extends ILocale {
     };
     "_sfx": {
         /**
-         * ノート
+         * ツイート
          */
         "note": string;
         /**
-         * ノート(自分)
+         * ツイート(自分)
          */
         "noteMy": string;
         /**
@@ -8191,7 +8191,7 @@ export interface Locale extends ILocale {
          */
         "write:mutes": string;
         /**
-         * ノートを作成・削除する
+         * ツイートを作成・削除する
          */
         "write:notes": string;
         /**
@@ -8351,7 +8351,7 @@ export interface Locale extends ILocale {
          */
         "write:admin:meta": string;
         /**
-         * モデレーションノートを操作する
+         * モデレーションツイートを操作する
          */
         "write:admin:user-note": string;
         /**
@@ -8423,7 +8423,7 @@ export interface Locale extends ILocale {
          */
         "read:admin:queue": string;
         /**
-         * プロモーションノートを操作する
+         * プロモーションツイートを操作する
          */
         "write:admin:promo": string;
         /**
@@ -8523,23 +8523,23 @@ export interface Locale extends ILocale {
     };
     "_antennaSources": {
         /**
-         * 全てのノート
+         * 全てのツイート
          */
         "all": string;
         /**
-         * フォローしているユーザーのノート
+         * フォローしているユーザーのツイート
          */
         "homeTimeline": string;
         /**
-         * 指定した一人または複数のユーザーのノート
+         * 指定した一人または複数のユーザーのツイート
          */
         "users": string;
         /**
-         * 指定したリストのユーザーのノート
+         * 指定したリストのユーザーのツイート
          */
         "userList": string;
         /**
-         * 指定した一人または複数のユーザーを除いた全てのノート
+         * 指定した一人または複数のユーザーを除いた全てのツイート
          */
         "userBlacklist": string;
     };
@@ -8654,6 +8654,10 @@ export interface Locale extends ILocale {
          * オンラインユーザー
          */
         "onlineUsers": string;
+        /**
+         * オンラインユーザー詳細
+         */
+        "onlineUsersDetails": string;
         /**
          * ジョブキュー
          */
@@ -8841,11 +8845,11 @@ export interface Locale extends ILocale {
     };
     "_postForm": {
         /**
-         * このノートに返信...
+         * このツイートに返信...
          */
         "replyPlaceholder": string;
         /**
-         * このノートを引用...
+         * このツイートを引用...
          */
         "quotePlaceholder": string;
         /**
@@ -8947,11 +8951,11 @@ export interface Locale extends ILocale {
     };
     "_exportOrImport": {
         /**
-         * 全てのノート
+         * 全てのツイート
          */
         "allNotes": string;
         /**
-         * お気に入りにしたノート
+         * お気に入りにしたツイート
          */
         "favoritedNotes": string;
         /**
@@ -9009,19 +9013,19 @@ export interface Locale extends ILocale {
          */
         "activeUsers": string;
         /**
-         * ノートの増減
+         * ツイートの増減
          */
         "notesIncDec": string;
         /**
-         * ローカルのノートの増減
+         * ローカルのツイートの増減
          */
         "localNotesIncDec": string;
         /**
-         * リモートのノートの増減
+         * リモートのツイートの増減
          */
         "remoteNotesIncDec": string;
         /**
-         * ノートの合計
+         * ツイートの合計
          */
         "notesTotal": string;
         /**
@@ -9055,11 +9059,11 @@ export interface Locale extends ILocale {
          */
         "usersTotal": string;
         /**
-         * ノートの増減
+         * ツイートの増減
          */
         "notes": string;
         /**
-         * ノートの累積
+         * ツイートの累積
          */
         "notesTotal": string;
         /**
@@ -9350,16 +9354,16 @@ export interface Locale extends ILocale {
              */
             "dynamicDescription": ParameterizedString<"play">;
             /**
-             * ノート埋め込み
+             * ツイート埋め込み
              */
             "note": string;
             "_note": {
                 /**
-                 * ノートID
+                 * ツイートID
                  */
                 "id": string;
                 /**
-                 * ノートURLをペーストして設定することもできます。
+                 * ツイートURLをペーストして設定することもできます。
                  */
                 "idDescription": string;
                 /**
@@ -9401,7 +9405,7 @@ export interface Locale extends ILocale {
          */
         "youGotQuote": ParameterizedString<"name">;
         /**
-         * {name}がリノートしました
+         * {name}がリツイートしました
          */
         "youRenoted": ParameterizedString<"name">;
         /**
@@ -9465,7 +9469,7 @@ export interface Locale extends ILocale {
          */
         "likedBySomeUsers": ParameterizedString<"n">;
         /**
-         * {n}人がリノートしました
+         * {n}人がリツイートしました
          */
         "renotedBySomeUsers": ParameterizedString<"n">;
         /**
@@ -9506,7 +9510,7 @@ export interface Locale extends ILocale {
              */
             "reply": string;
             /**
-             * リノート
+             * リツイート
              */
             "renote": string;
             /**
@@ -9564,7 +9568,7 @@ export interface Locale extends ILocale {
              */
             "reply": string;
             /**
-             * リノート
+             * リツイート
              */
             "renote": string;
         };
@@ -9583,7 +9587,7 @@ export interface Locale extends ILocale {
          */
         "addColumn": string;
         /**
-         * 新着ノート通知の設定
+         * 新着ツイート通知の設定
          */
         "newNoteNotificationSettings": string;
         /**
@@ -9758,7 +9762,7 @@ export interface Locale extends ILocale {
              */
             "followed": string;
             /**
-             * ノートを投稿したとき
+             * ツイートを投稿したとき
              */
             "note": string;
             /**
@@ -9907,7 +9911,7 @@ export interface Locale extends ILocale {
          */
         "updateServerSettings": string;
         /**
-         * ユーザーのモデレーションノート更新
+         * ユーザーのモデレーションツイート更新
          */
         "updateUserNote": string;
         /**
@@ -9915,7 +9919,7 @@ export interface Locale extends ILocale {
          */
         "deleteDriveFile": string;
         /**
-         * ノートを削除
+         * ツイートを削除
          */
         "deleteNote": string;
         /**
@@ -9955,7 +9959,7 @@ export interface Locale extends ILocale {
          */
         "unsuspendRemoteInstance": string;
         /**
-         * リモートサーバーのモデレーションノート更新
+         * リモートサーバーのモデレーションツイート更新
          */
         "updateRemoteInstanceNote": string;
         /**
@@ -9975,7 +9979,7 @@ export interface Locale extends ILocale {
          */
         "forwardAbuseReport": string;
         /**
-         * 通報のモデレーションノート更新
+         * 通報のモデレーションツイート更新
          */
         "updateAbuseReportNote": string;
         /**
@@ -10077,7 +10081,7 @@ export interface Locale extends ILocale {
          */
         "uploadedAt": string;
         /**
-         * 添付されているノート
+         * 添付されているツイート
          */
         "attachedNotes": string;
         /**
