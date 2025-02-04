@@ -13,7 +13,8 @@ SPDX-License-Identifier: AGPL-3.0-only
 <div v-else>
 	<div :class="$style.error">
 		<div><i class="ti ti-alert-triangle"></i> {{ i18n.ts.somethingHappened }}</div>
-		<MkButton inline style="margin-top: 16px;" @click="retry"><i class="ti ti-reload"></i> {{ i18n.ts.retry }}</MkButton>
+		<div><MkButton inline style="margin-top: 16px;" @click="retry"><i class="ti ti-reload"></i> {{ i18n.ts.retry }}</MkButton></div>
+		<div><MkButton inline style="margin-top: 16px;" @click="openLegacyOfBbs">エラーが続いたら…<br>懐かし掲示板 BBS</MkButton></div>
 	</div>
 </div>
 </template>
@@ -60,6 +61,10 @@ watch(() => props.p, () => {
 const retry = () => {
 	process();
 };
+
+function openLegacyOfBbs() {
+	window.open('https://legacy-of-bbs.pages.dev', '_blank', 'noopener');
+}
 </script>
 
 <style lang="scss" module>

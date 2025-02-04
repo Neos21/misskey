@@ -8,7 +8,8 @@ SPDX-License-Identifier: AGPL-3.0-only
 	<div :class="$style.root">
 		<img :class="$style.img" :src="serverErrorImageUrl" class="_ghost"/>
 		<p :class="$style.text"><i class="ti ti-alert-triangle"></i> {{ i18n.ts.somethingHappened }}</p>
-		<MkButton :class="$style.button" @click="() => emit('retry')">{{ i18n.ts.retry }}</MkButton>
+		<p :class="$style.text"><MkButton :class="$style.button" @click="() => emit('retry')">{{ i18n.ts.retry }}</MkButton></p>
+		<p :class="$style.text"><MkButton :class="$style.button" @click="openLegacyOfBbs">エラーが続いたら…<br>懐かし掲示板 BBS</MkButton></p>
 	</div>
 </Transition>
 </template>
@@ -22,6 +23,10 @@ import { serverErrorImageUrl } from '@/instance.js';
 const emit = defineEmits<{
 	(ev: 'retry'): void;
 }>();
+
+function openLegacyOfBbs() {
+	window.open('https://legacy-of-bbs.pages.dev', '_blank', 'noopener');
+}
 </script>
 
 <style lang="scss" module>
