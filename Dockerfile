@@ -30,7 +30,7 @@ COPY --link ["packages/misskey-reversi/package.json", "./packages/misskey-revers
 COPY --link ["packages/misskey-bubble-game/package.json", "./packages/misskey-bubble-game/"]
 
 ARG NODE_ENV=production
-
+ENV COREPACK_INTEGRITY_KEYS=0
 RUN --mount=type=cache,target=/root/.local/share/pnpm/store,sharing=locked \
 	pnpm i --frozen-lockfile --aggregate-output
 
@@ -60,7 +60,7 @@ COPY --link ["packages/misskey-reversi/package.json", "./packages/misskey-revers
 COPY --link ["packages/misskey-bubble-game/package.json", "./packages/misskey-bubble-game/"]
 
 ARG NODE_ENV=production
-
+ENV COREPACK_INTEGRITY_KEYS=0
 RUN --mount=type=cache,target=/root/.local/share/pnpm/store,sharing=locked \
 	pnpm i --frozen-lockfile --aggregate-output
 
@@ -103,6 +103,7 @@ COPY --chown=misskey:misskey . ./
 
 ENV LD_PRELOAD=/usr/local/lib/libjemalloc.so
 ENV NODE_ENV=production
+ENV COREPACK_INTEGRITY_KEYS=0
 HEALTHCHECK --interval=5s --retries=20 CMD ["/bin/bash", "/misskey/healthcheck.sh"]
 ENTRYPOINT ["/usr/bin/tini", "--"]
 CMD ["pnpm", "run", "migrateandstart"]
