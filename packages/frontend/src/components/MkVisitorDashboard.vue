@@ -161,6 +161,7 @@ function showMenu(ev: MouseEvent) {
 
 .mainAbout {
 	padding: 0 32px;
+	white-space: pre-wrap;
 }
 
 .mainWarn {
