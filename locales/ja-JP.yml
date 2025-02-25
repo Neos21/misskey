@@ -2510,6 +2510,7 @@ _notification:
     all: "すべて"
     note: "ユーザーの新規投稿"
     follow: "フォロー"
+    unfollow: "フォロー解除"
     mention: "メンション"
     reply: "リプライ"
     renote: "リツイート"
@@ -2523,6 +2524,8 @@ _notification:
     exportCompleted: "エクスポートが完了した"
     login: "ログイン"
     test: "通知のテスト"
+    blocked: "ブロック"
+    unblocked: "ブロック解除"
     app: "連携アプリからの通知"
 
   _actions:
