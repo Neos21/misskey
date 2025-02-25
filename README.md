@@ -5,6 +5,23 @@
 
 ## 変更した主な部分
 
+- 2025-02-25
+    - フォロー解除通知・ブロック通知・ブロック解除通知を追加 ([参考](https://github.com/Rumisystem-github/rumisskey/commit/b6bd2acbf9bf4bfa5d9521ab8764566955fd8d6e))
+        - `packages/backend/src/core/NotificationService.ts`
+        - `packages/backend/src/core/UserBlockingService.ts`
+        - `packages/backend/src/core/UserFollowingService.ts`
+        - `packages/backend/src/models/Notification.ts`
+        - `packages/backend/src/types.ts`
+        - `packages/frontend-shared/js/const.ts`
+        - `packages/frontend/src/components/MkNotification.vue`
+        - `locales/ja-JP.yml`
+- 2025-02-05
+    - 未ログイントップページ (エントランス) を簡素化
+        - `packages/frontend/src/components/MkVisitorDashboard.vue`
+        - `packages/frontend/src/pages/welcome.entrance.a.vue`
+    - エラー表示の下部に「エラーが続いたら…」の表示を追加
+        - `packages/frontend/src/components/form/suspense.vue`
+        - `packages/frontend/src/components/global/MkError.vue`
 - 2025-02-01
     - `nyaize()` 関数を無効化
         - `packages/misskey-js/src/nyaize.ts`
