@@ -26,8 +26,8 @@ SPDX-License-Identifier: AGPL-3.0-only
 <script lang="ts" setup>
 import { computed, watch, ref, shallowRef } from 'vue';
 import * as Misskey from 'misskey-js';
-import MkTimeline from '@/components/MkTimeline.vue';
 import { scroll } from '@@/js/scroll.js';
+import MkTimeline from '@/components/MkTimeline.vue';
 import { misskeyApi } from '@/scripts/misskey-api.js';
 import { definePageMetadata } from '@/scripts/page-metadata.js';
 import { i18n } from '@/i18n.js';
@@ -98,7 +98,7 @@ definePageMetadata(() => ({
 
 .tl {
 	background: var(--MI_THEME-bg);
-	border-radius: var(--MI-radius);
+	border-radius: calc(var(--MI-radius) / 2);
 	overflow: clip;
 }
 </style>

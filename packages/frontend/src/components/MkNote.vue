@@ -177,13 +177,15 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 <script lang="ts" setup>
 import { computed, inject, onMounted, ref, shallowRef, watch, provide } from 'vue';
-import type { Ref } from 'vue';
 import * as mfm from 'mfm-js';
 import * as Misskey from 'misskey-js';
 import { isLink } from '@@/js/is-link.js';
 import { shouldCollapsed } from '@@/js/collapsed.js';
 import { host } from '@@/js/config.js';
+import type { Ref } from 'vue';
 import type { MenuItem } from '@/types/menu.js';
+import type { OpenOnRemoteOptions } from '@/scripts/please-login.js';
+import type { Keymap } from '@/scripts/hotkey.js';
 import MkNoteSub from '@/components/MkNoteSub.vue';
 import MkNoteHeader from '@/components/MkNoteHeader.vue';
 import MkNoteSimple from '@/components/MkNoteSimple.vue';
@@ -196,7 +198,6 @@ import MkUsersTooltip from '@/components/MkUsersTooltip.vue';
 import MkUrlPreview from '@/components/MkUrlPreview.vue';
 import MkInstanceTicker from '@/components/MkInstanceTicker.vue';
 import { pleaseLogin } from '@/scripts/please-login.js';
-import type { OpenOnRemoteOptions } from '@/scripts/please-login.js';
 import { checkWordMute } from '@/scripts/check-word-mute.js';
 import { notePage } from '@/filters/note.js';
 import { userPage } from '@/filters/user.js';
@@ -218,7 +219,6 @@ import { getNoteSummary } from '@/scripts/get-note-summary.js';
 import MkRippleEffect from '@/components/MkRippleEffect.vue';
 import { showMovedDialog } from '@/scripts/show-moved-dialog.js';
 import { isEnabledUrlPreview } from '@/instance.js';
-import type { Keymap } from '@/scripts/hotkey.js';
 import { focusPrev, focusNext } from '@/scripts/focus.js';
 import { getAppearNote } from '@/scripts/get-appear-note.js';
 
@@ -637,7 +637,7 @@ function emitUpdReaction(emoji: string, delta: number) {
 .root {
 	position: relative;
 	transition: box-shadow 0.1s ease;
-	font-size: 1.05em;
+	font-size: 1em;
 	overflow: clip;
 	contain: content;
 
@@ -809,7 +809,7 @@ function emitUpdReaction(emoji: string, delta: number) {
 .article {
 	position: relative;
 	display: flex;
-	padding: 28px 32px;
+	padding: 10px 12px 14px;
 }
 
 .colorBar {
@@ -894,6 +894,7 @@ function emitUpdReaction(emoji: string, delta: number) {
 
 .text {
 	overflow-wrap: break-word;
+	line-height: 1.3;
 }
 
 .replyIcon {
@@ -966,7 +967,7 @@ function emitUpdReaction(emoji: string, delta: number) {
 	}
 
 	.article {
-		padding: 24px 26px;
+		padding: 10px 12px 14px;
 	}
 
 	.avatar {
@@ -985,7 +986,7 @@ function emitUpdReaction(emoji: string, delta: number) {
 	}
 
 	.article {
-		padding: 20px 22px;
+		padding: 10px 12px;
 	}
 
 	.footer {
@@ -1008,7 +1009,7 @@ function emitUpdReaction(emoji: string, delta: number) {
 	}
 
 	.article {
-		padding: 14px 16px;
+		padding: 10px 12px;
 	}
 }
 

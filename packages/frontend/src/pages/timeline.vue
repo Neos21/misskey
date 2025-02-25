@@ -6,7 +6,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 <template>
 <MkStickyContainer>
 	<template #header><MkPageHeader v-model:tab="src" :actions="headerActions" :tabs="$i ? headerTabs : headerTabsWhenNotLogin" :displayMyAvatar="true"/></template>
-	<MkSpacer :contentMax="800">
+	<MkSpacer :contentMax="800" :marginMin="6" :marginMax="6">
 		<MkHorizontalSwipe v-model:tab="src" :tabs="$i ? headerTabs : headerTabsWhenNotLogin">
 			<div :key="src" ref="rootEl">
 				<MkInfo v-if="isBasicTimeline(src) && !defaultStore.reactiveState.timelineTutorials.value[src]" style="margin-bottom: var(--MI-margin);" closable @close="closeTutorial()">
@@ -334,7 +334,7 @@ definePageMetadata(() => ({
 
 .tl {
 	background: var(--MI_THEME-bg);
-	border-radius: var(--MI-radius);
+	border-radius: calc(var(--MI-radius) / 2);
 	overflow: clip;
 }
 </style>

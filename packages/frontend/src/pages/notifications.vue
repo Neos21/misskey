@@ -6,7 +6,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 <template>
 <MkStickyContainer>
 	<template #header><MkPageHeader v-model:tab="tab" :actions="headerActions" :tabs="headerTabs"/></template>
-	<MkSpacer :contentMax="800">
+	<MkSpacer :contentMax="800" :marginMin="6" :marginMax="6">
 		<MkHorizontalSwipe v-model:tab="tab" :tabs="headerTabs">
 			<div v-if="tab === 'all'" key="all">
 				<XNotifications :class="$style.notifications" :excludeTypes="excludeTypes"/>
@@ -24,13 +24,13 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue';
+import { notificationTypes } from '@@/js/const.js';
 import XNotifications from '@/components/MkNotifications.vue';
 import MkNotes from '@/components/MkNotes.vue';
 import MkHorizontalSwipe from '@/components/MkHorizontalSwipe.vue';
 import * as os from '@/os.js';
 import { i18n } from '@/i18n.js';
 import { definePageMetadata } from '@/scripts/page-metadata.js';
-import { notificationTypes } from '@@/js/const.js';
 
 const tab = ref('all');
 const includeTypes = ref<string[] | null>(null);
@@ -102,7 +102,7 @@ definePageMetadata(() => ({
 
 <style module lang="scss">
 .notifications {
-	border-radius: var(--MI-radius);
+	border-radius: calc(var(--MI-radius) / 2);
 	overflow: clip;
 }
 </style>

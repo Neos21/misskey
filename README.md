@@ -5,6 +5,14 @@
 
 ## 変更した主な部分
 
+- 2025-02-26
+    - タイムライン表示などの余白を切り詰め1画面の情報量が増えるように調整
+        - `packages/frontend/src/components/MkNote.vue`
+        - `packages/frontend/src/pages/antenna-timeline.vue`
+        - `packages/frontend/src/pages/notifications.vue`
+        - `packages/frontend/src/pages/timeline.vue`
+        - `packages/frontend/src/pages/user-list-timeline.vue`
+        - `packages/frontend/src/pages/user/index.timeline.vue`
 - 2025-02-25
     - フォロー解除通知・ブロック通知・ブロック解除通知を追加 ([参考](https://github.com/Rumisystem-github/rumisskey/commit/b6bd2acbf9bf4bfa5d9521ab8764566955fd8d6e))
         - `packages/backend/src/core/NotificationService.ts`

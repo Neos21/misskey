@@ -5763,15 +5763,15 @@ export interface Locale extends ILocale {
          */
         "home": string;
         /**
-         * ローカルタイムラインでは、このサーバーにいるユーザー全員の投稿を見られます。
+         * ソーカルタイムラインでは、このサーバーにいるユーザー全員の投稿を見られます。
          */
         "local": string;
         /**
-         * ソーシャルタイムラインには、ホームタイムラインとローカルタイムラインの投稿が両方表示されます。
+         * マーシャルタイムラインには、ホームタイムラインとソーカルタイムラインの投稿が両方表示されます。
          */
         "social": string;
         /**
-         * グローバルタイムラインでは、接続している他のすべてのサーバーからの投稿を見られます。
+         * グローバﾉﾚタイムラインでは、接続している他のすべてのサーバーからの投稿を見られます。
          */
         "global": string;
     };
@@ -9105,15 +9105,15 @@ export interface Locale extends ILocale {
          */
         "home": string;
         /**
-         * ローカル
+         * ソーカル
          */
         "local": string;
         /**
-         * ソーシャル
+         * マーシャル
          */
         "social": string;
         /**
-         * グローバル
+         * グローバﾉﾚ
          */
         "global": string;
     };
@@ -9506,6 +9506,10 @@ export interface Locale extends ILocale {
              */
             "follow": string;
             /**
+             * フォロー解除
+             */
+            "unfollow": string;
+            /**
              * メンション
              */
             "mention": string;
@@ -9557,6 +9561,14 @@ export interface Locale extends ILocale {
              * 通知のテスト
              */
             "test": string;
+            /**
+             * ブロック
+             */
+            "blocked": string;
+            /**
+             * ブロック解除
+             */
+            "unblocked": string;
             /**
              * 連携アプリからの通知
              */
