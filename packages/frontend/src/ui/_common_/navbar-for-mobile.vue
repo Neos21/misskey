@@ -244,11 +244,11 @@ function openDiscord() {
 
 	&:hover {
 		text-decoration: none;
-		color: var(--MI_THEME-navHoverFg);
+		color: var(--MI_THEME-accent);
 	}
 
 	&.active {
-		color: var(--MI_THEME-navActive);
+		color: var(--MI_THEME-accent);
 	}
 
 	&:hover, &.active {

@@ -239,7 +239,7 @@ function getActualReactedUsersCount(notification: Misskey.entities.Notification)
 .root {
 	position: relative;
 	box-sizing: border-box;
-	padding: 24px 32px;
+	padding: 12px 12px;
 	font-size: 0.9em;
 	overflow-wrap: break-word;
 	display: flex;
