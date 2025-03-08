@@ -818,7 +818,6 @@ async function post(ev?: MouseEvent) {
 			clear();
 		}
 		setTimeout(() => {
-			console.log('Focus');
 			focus();
 		}, 1);
 		nextTick(() => {
