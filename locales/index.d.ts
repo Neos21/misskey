@@ -4971,7 +4971,7 @@ export interface Locale extends ILocale {
      */
     "disableStreamingTimeline": string;
     /**
-     * 通知をグルーピングして表示する
+     * 通知をグルーピング
      */
     "useGroupedNotifications": string;
     /**
@@ -5262,6 +5262,22 @@ export interface Locale extends ILocale {
      * " {emoji} " をリアクションしますか？
      */
     "reactAreYouSure": ParameterizedString<"emoji">;
+    /**
+     * このメディアをセンシティブとして設定しますか？
+     */
+    "markAsSensitiveConfirm": string;
+    /**
+     * このメディアのセンシティブ指定を解除しますか？
+     */
+    "unmarkAsSensitiveConfirm": string;
+    /**
+     * 環境設定
+     */
+    "preferences": string;
+    /**
+     * アクセシビリティ
+     */
+    "accessibility": string;
     "_accountSettings": {
         /**
          * コンテンツの表示にログインを必須にする
@@ -10074,6 +10090,10 @@ export interface Locale extends ILocale {
          * ギャラリーの投稿を削除
          */
         "deleteGalleryPost": string;
+        /**
+         * プロキシアカウントの説明を更新
+         */
+        "updateProxyAccountDescription": string;
     };
     "_fileViewer": {
         /**
@@ -11015,6 +11035,36 @@ export interface Locale extends ILocale {
          * 修復ツールを起動
          */
         "otherOption3": string;
+    };
+    "_search": {
+        /**
+         * 全て
+         */
+        "searchScopeAll": string;
+        /**
+         * ローカル
+         */
+        "searchScopeLocal": string;
+        /**
+         * サーバー指定
+         */
+        "searchScopeServer": string;
+        /**
+         * ユーザー指定
+         */
+        "searchScopeUser": string;
+        /**
+         * サーバーのホストを入力してください
+         */
+        "pleaseEnterServerHost": string;
+        /**
+         * ユーザーを選択してください
+         */
+        "pleaseSelectUser": string;
+        /**
+         * 例: misskey.example.com
+         */
+        "serverHostPlaceholder": string;
     };
 }
 declare const locales: {

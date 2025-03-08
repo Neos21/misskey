@@ -81,6 +81,46 @@
         - `packages/frontend/src/ui/visitor.vue`
 
 
+-----
+
+- ローカル開発環境構築
+
+```bash
+$ git submodule update --init
+
+$ cp ./.config/docker_example.yml ./.config/default.yml
+  db:
+    host: localhost  # Change This
+    user: CHANGE-THIS
+    pass: CHANGE-THIS
+  redis:
+    host: localhost  # Change This
+
+$ cp ./.config/docker_example.env ./.config/docker.env
+  POSTGRES_PASSWORD=CHANGE-THIS
+  POSTGRES_USER=CHANGE-THIS
+
+$ cp ./compose.local-db.yml ./compose.yml
+
+# PostgreSQL・Redis 起動
+$ docker compose up -d
+# ローカル環境起動
+$ npm install -g pnpm@latest
+$ pnpm install
+$ pnpm build
+$ pnpm migrate
+$ pnpm dev
+```
+
+- 追従作業
+
+```bash
+$ git remote add upstream https://github.com/misskey-dev/misskey.git
+$ git fetch upstream
+$ git merge upstream/develop
+```
+
+
 ## Links
 
 - [Neo's World](https://neos21.net/)
