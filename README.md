@@ -120,6 +120,65 @@ $ git fetch upstream
 $ git merge upstream/develop
 ```
 
+- PostgreSQL
+
+```bash
+$ docker exec -it misskey-db-1 bash
+
+$$ psql -U CHANGE-THIS -d misskey
+```
+
+```sql
+CREATE OR REPLACE FUNCTION get_time_from_id(id TEXT) RETURNS TIMESTAMP AS $$
+DECLARE
+    base_time BIGINT := 946684800000;
+    extracted_part TEXT;
+    decoded_time BIGINT := 0;
+    digit TEXT;
+    i INT;
+    val INT;
+    base36_chars TEXT := '0123456789abcdefghijklmnopqrstuvwxyz';
+BEGIN
+    extracted_part := lower(left(id, 8));
+    FOR i IN 1..length(extracted_part) LOOP
+        digit := substr(extracted_part, i, 1);
+        val := position(digit IN base36_chars) - 1;
+        decoded_time := decoded_time * 36 + val;
+    END LOOP;
+    decoded_time := decoded_time + base_time;
+    RETURN TO_TIMESTAMP(decoded_time / 1000) AT TIME ZONE 'Asia/Tokyo';
+END;
+$$ LANGUAGE plpgsql;
+
+\pset format unaligned
+\pset fieldsep '\t'
+\pset footer off
+
+SELECT
+    get_time_from_id(note.id),
+    username,
+    text
+FROM note
+    LEFT JOIN public.user ON "userId" = public.user.id
+WHERE
+    "userHost" IS NULL
+AND
+    username != 'neos21'
+ORDER BY note.id DESC;
+
+SELECT
+    users.id,
+    users.username,
+    users.name,
+    users."updatedAt",
+    users."isDeleted"
+FROM
+    public.user users
+WHERE
+    users.host IS NULL
+ORDER BY users."updatedAt" DESC NULLS LAST;
+```
+
 
 ## Links
 
