@@ -30,7 +30,7 @@ import MkNotes from '@/components/MkNotes.vue';
 import MkHorizontalSwipe from '@/components/MkHorizontalSwipe.vue';
 import * as os from '@/os.js';
 import { i18n } from '@/i18n.js';
-import { definePageMetadata } from '@/scripts/page-metadata.js';
+import { definePage } from '@/page.js';
 
 const tab = ref('all');
 const includeTypes = ref<string[] | null>(null);
@@ -94,7 +94,7 @@ const headerTabs = computed(() => [{
 	icon: 'ti ti-mail',
 }]);
 
-definePageMetadata(() => ({
+definePage(() => ({
 	title: i18n.ts.notifications,
 	icon: 'ti ti-bell',
 }));
