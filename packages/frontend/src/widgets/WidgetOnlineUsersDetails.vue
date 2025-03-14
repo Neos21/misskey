@@ -22,9 +22,10 @@ SPDX-License-Identifier: AGPL-3.0-only
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { useInterval } from '@@/js/use-interval.js';
-import { useWidgetPropsManager, WidgetComponentEmits, WidgetComponentExpose, WidgetComponentProps } from './widget.js';
-import { GetFormResultType } from '@/scripts/form.js';
-import { misskeyApi, misskeyApiGet } from '@/scripts/misskey-api.js';
+import { useWidgetPropsManager } from './widget.js';
+import type { WidgetComponentEmits, WidgetComponentExpose, WidgetComponentProps } from './widget.js';
+import type { GetFormResultType } from '@/utility/form.js';
+import { misskeyApi, misskeyApiGet } from '@/utility/misskey-api.js';
 import { i18n } from '@/i18n.js';
 import number from '@/filters/number.js';
 
@@ -49,7 +50,7 @@ const { widgetProps, configure } = useWidgetPropsManager(name,
 );
 
 const onlineUsersCount = ref(0);
-const onlineUsersDetails = ref([]);
+const onlineUsersDetails = ref<Array<{ username: string; lastActiveDate: Date | string; }>>([]);
 
 const tick = () => {
 	misskeyApiGet('get-online-users-count').then(res => {
@@ -57,9 +58,9 @@ const tick = () => {
 		onlineUsersDetails.value = res.details.map(detail => {
 			const jst = new Date(new Date(detail.lastActiveDate).getTime() + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000));
 			if (Number.isNaN(jst.getTime())) {
-				detail.lastActiveDate = '-';
+				(detail.lastActiveDate as unknown as string) = '-';
 			} else {
-				detail.lastActiveDate = jst.getFullYear()
+				(detail.lastActiveDate as unknown as string) = jst.getFullYear()
 					+ '-' + ('0' + (jst.getMonth() + 1)).slice(-2)
 					+ '-' + ('0' + jst.getDate()).slice(-2)
 					+ ' ' + ('0' + jst.getHours()).slice(-2)

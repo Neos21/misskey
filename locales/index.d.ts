@@ -5430,7 +5430,7 @@ export interface Locale extends ILocale {
          */
         "soundsBanner": string;
         /**
-         * タイムラインとノート
+         * タイムラインとツイート
          */
         "timelineAndNote": string;
     };
@@ -5524,7 +5524,7 @@ export interface Locale extends ILocale {
          */
         "mayNotEffectSomeSituations": string;
         /**
-         * 指定した時間を経過しているノート
+         * 指定した時間を経過しているツイート
          */
         "notesHavePassedSpecifiedPeriod": string;
         /**
