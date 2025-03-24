@@ -4,22 +4,21 @@ SPDX-License-Identifier: AGPL-3.0-only
 -->
 
 <template>
-<MkStickyContainer>
-	<template #header><MkPageHeader v-model:tab="tab" :actions="headerActions" :tabs="headerTabs"/></template>
+<PageWithHeader v-model:tab="tab" :actions="headerActions" :tabs="headerTabs">
 	<MkSpacer :contentMax="800" :marginMin="6" :marginMax="6">
 		<MkHorizontalSwipe v-model:tab="tab" :tabs="headerTabs">
-			<div v-if="tab === 'all'" key="all">
+			<div v-if="tab === 'all'">
 				<XNotifications :class="$style.notifications" :excludeTypes="excludeTypes"/>
 			</div>
-			<div v-else-if="tab === 'mentions'" key="mention">
+			<div v-else-if="tab === 'mentions'">
 				<MkNotes :pagination="mentionsPagination"/>
 			</div>
-			<div v-else-if="tab === 'directNotes'" key="directNotes">
+			<div v-else-if="tab === 'directNotes'">
 				<MkNotes :pagination="directNotesPagination"/>
 			</div>
 		</MkHorizontalSwipe>
 	</MkSpacer>
-</MkStickyContainer>
+</PageWithHeader>
 </template>
 
 <script lang="ts" setup>

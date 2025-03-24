@@ -5,8 +5,7 @@
 
 import { defineAsyncComponent } from 'vue';
 import type { AsyncComponentLoader } from 'vue';
-import type { IRouter, RouteDef } from '@/nirax.js';
-import { Router } from '@/nirax.js';
+import type { RouteDef } from '@/lib/nirax.js';
 import { $i, iAmModerator } from '@/i.js';
 import MkLoading from '@/pages/_loading_.vue';
 import MkError from '@/pages/_error_.vue';
@@ -17,7 +16,7 @@ export const page = (loader: AsyncComponentLoader) => defineAsyncComponent({
 	errorComponent: MkError,
 });
 
-const routes: RouteDef[] = [{
+export const ROUTE_DEF = [{
 	path: '/@:username/pages/:pageName(*)',
 	component: page(() => import('@/pages/page.vue')),
 }, {
@@ -41,6 +40,22 @@ const routes: RouteDef[] = [{
 }, {
 	path: '/clips/:clipId',
 	component: page(() => import('@/pages/clip.vue')),
+}, {
+	path: '/chat',
+	component: page(() => import('@/pages/chat/home.vue')),
+	loginRequired: true,
+}, {
+	path: '/chat/user/:userId',
+	component: page(() => import('@/pages/chat/room.vue')),
+	loginRequired: true,
+}, {
+	path: '/chat/room/:roomId',
+	component: page(() => import('@/pages/chat/room.vue')),
+	loginRequired: true,
+}, {
+	path: '/chat/messages/:messageId',
+	component: page(() => import('@/pages/chat/message.vue')),
+	loginRequired: true,
 }, {
 	path: '/instance-info/:host',
 	component: page(() => import('@/pages/instance-info.vue')),
@@ -567,7 +582,6 @@ const routes: RouteDef[] = [{
 	name: 'index',
 	path: '/',
 	component: $i ? page(() => import('@/pages/timeline.vue')) : page(() => import('@/pages/welcome.vue')),
-	globalCacheKey: 'index',
 }, {
 	// テスト用リダイレクト設定。ログイン中ユーザのプロフィールにリダイレクトする
 	path: '/redirect-test',
@@ -576,8 +590,4 @@ const routes: RouteDef[] = [{
 }, {
 	path: '/:(*)',
 	component: page(() => import('@/pages/not-found.vue')),
-}];
-
-export function createMainRouter(path: string): IRouter {
-	return new Router(routes, path, !!$i, page(() => import('@/pages/not-found.vue')));
-}
+}] satisfies RouteDef[];

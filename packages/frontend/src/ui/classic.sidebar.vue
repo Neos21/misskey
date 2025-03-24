@@ -58,7 +58,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 	<div class="divider"></div>
 	<div class="about">
 		<button v-click-anime class="item _button" @click="openInstanceMenu">
-			<img :src="instance.iconUrl ?? instance.faviconUrl ?? '/favicon.ico'" class="_ghost"/>
+			<img :src="instance.iconUrl ?? instance.faviconUrl ?? '/favicon.ico'" draggable="false"/>
 		</button>
 	</div>
 	<!--<MisskeyLogo class="misskey"/>-->
@@ -66,7 +66,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 </template>
 
 <script lang="ts" setup>
-import { defineAsyncComponent, computed, watch, ref, shallowRef } from 'vue';
+import { defineAsyncComponent, computed, watch, ref, useTemplateRef } from 'vue';
 import { openInstanceMenu } from './_common_/common.js';
 // import { host } from '@@/js/config.js';
 import * as os from '@/os.js';
@@ -93,7 +93,7 @@ const otherNavItemIndicated = computed<boolean>(() => {
 	}
 	return false;
 });
-const el = shallowRef<HTMLElement>();
+const el = useTemplateRef('el');
 // let accounts = $ref([]);
 // let connection = $ref(null);
 const iconOnly = ref(false);
