@@ -16,7 +16,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 			<MkA v-tooltip.noDelay.right="i18n.ts.timeline" :class="$style.item" :activeClass="$style.active" to="/" exact>
 				<i :class="$style.itemIcon" class="ti ti-home ti-fw" style="viewTransitionName: navbar-homeIcon;"></i><span :class="$style.itemText">{{ i18n.ts.timeline }}</span>
 			</MkA>
-			<template v-for="item in menu">
+			<template v-for="item in prefer.r.menu.value">
 				<div v-if="item === '-'" :class="$style.divider"></div>
 				<component
 					:is="navbarItemDef[item].to ? 'MkA' : 'button'"
@@ -64,6 +64,9 @@ SPDX-License-Identifier: AGPL-3.0-only
 			</button>
 		</div>
 		<div :class="$style.bottom">
+			<button v-if="showWidgetButton" class="_button" :class="[$style.widget]" @click="() => emit('widgetButtonClick')">
+				<i class="ti ti-apps ti-fw"></i>
+			</button>
 			<button v-tooltip.noDelay.right="i18n.ts.note" class="_button" :class="[$style.post]" data-cy-open-post-form @click="() => { os.post(); }">
 				<i class="ti ti-pencil ti-fw" :class="$style.postIcon"></i><span :class="$style.postText">{{ i18n.ts.note }}</span>
 			</button>
@@ -81,7 +84,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 	</svg>
 	-->
 
-	<div v-if="!forceIconOnly" :class="$style.subButtons">
+	<div v-if="!forceIconOnly && prefer.r.showNavbarSubButtons.value" :class="$style.subButtons">
 		<div :class="[$style.subButton, $style.menuEditButton]">
 			<svg viewBox="0 0 16 64" :class="$style.subButtonShape">
 				<g transform="matrix(0.333333,0,0,0.222222,0.000895785,21.3333)">
@@ -120,15 +123,22 @@ import { $i } from '@/i.js';
 
 const router = useRouter();
 
+const props = defineProps<{
+	showWidgetButton?: boolean;
+}>();
+
+const emit = defineEmits<{
+	(ev: 'widgetButtonClick'): void;
+}>();
+
 const forceIconOnly = ref(window.innerWidth <= 1279);
 const iconOnly = computed(() => {
 	return forceIconOnly.value || (store.r.menuDisplay.value === 'sideIcon');
 });
 
-const menu = computed(() => prefer.s.menu);
 const otherMenuItemIndicated = computed(() => {
 	for (const def in navbarItemDef) {
-		if (menu.value.includes(def)) continue;
+		if (prefer.r.menu.value.includes(def)) continue;
 		if (navbarItemDef[def].indicated) return true;
 	}
 	return false;
@@ -396,7 +406,7 @@ function openDiscord() {
 
 		&:hover, &.active {
 			&::before {
-				background: var(--MI_THEME-accentLighten);
+				background: hsl(from var(--MI_THEME-accent) h s calc(l + 10));
 			}
 		}
 	}
@@ -470,7 +480,7 @@ function openDiscord() {
 
 		&:hover {
 			text-decoration: none;
-			color: var(--MI_THEME-navHoverFg);
+			color: light-dark(hsl(from var(--MI_THEME-navFg) h s calc(l - 17)), hsl(from var(--MI_THEME-navFg) h s calc(l + 17)));
 		}
 
 		&.active {
@@ -585,6 +595,14 @@ function openDiscord() {
 		backdrop-filter: var(--MI-blur, blur(8px));
 	}
 
+	.widget {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 52px;
+		text-align: center;
+	}
+
 	.post {
 		display: block;
 		position: relative;
@@ -618,7 +636,7 @@ function openDiscord() {
 
 		&:hover, &.active {
 			&::before {
-				background: var(--MI_THEME-accentLighten);
+				background: hsl(from var(--MI_THEME-accent) h s calc(l + 10));
 			}
 		}
 	}
