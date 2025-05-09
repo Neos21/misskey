@@ -4,51 +4,22 @@ SPDX-License-Identifier: AGPL-3.0-only
 -->
 
 <template>
-<Transition :name="prefer.s.animation ? '_transition_zoom' : ''" appear>
-	<div :class="$style.root">
-		<img :class="$style.img" :src="serverErrorImageUrl" draggable="false"/>
-		<p :class="$style.text"><i class="ti ti-alert-triangle"></i> {{ i18n.ts.somethingHappened }}</p>
-		<p :class="$style.text"><MkButton :class="$style.button" @click="() => emit('retry')">{{ i18n.ts.retry }}</MkButton></p>
-		<p :class="$style.text"><MkButton :class="$style.button" @click="openLegacyOfBbs">エラーが続いたら…<br>懐かし掲示板 BBS</MkButton></p>
-	</div>
-</Transition>
+<MkResult type="error">
+	<MkButton :class="$style.button" rounded @click="() => emit('retry')">{{ i18n.ts.retry }}</MkButton>
+</MkResult>
 </template>
 
 <script lang="ts" setup>
 import MkButton from '@/components/MkButton.vue';
 import { i18n } from '@/i18n.js';
-import { prefer } from '@/preferences.js';
-import { serverErrorImageUrl } from '@/instance.js';
 
 const emit = defineEmits<{
 	(ev: 'retry'): void;
 }>();
-
-function openLegacyOfBbs() {
-	window.open('https://legacy-of-bbs.pages.dev', '_blank', 'noopener');
-}
 </script>
 
 <style lang="scss" module>
-.root {
-	padding: 32px;
-	text-align: center;
-  align-items: center;
-}
-
-.text {
-	margin: 0 0 8px 0;
-}
-
 .button {
 	margin: 0 auto;
-}
-
-.img {
-	vertical-align: bottom;
-  width: 128px;
-	height: 128px;
-	margin-bottom: 16px;
-	border-radius: 16px;
 }
 </style>

@@ -45,10 +45,6 @@ SPDX-License-Identifier: AGPL-3.0-only
 		
 		<div :class="$style.divider"></div>
 		
-		<button :class="$style.item" class="_button" @click="openFavoriya">
-			<i :class="$style.itemIcon" class="ti ti-brand-facebook-filled ti-fw"></i><span :class="$style.itemText">Favoriya</span>
-		</button>
-		
 		<button :class="$style.item" class="_button" @click="openDiscord">
 			<i :class="$style.itemIcon" class="ti ti-brand-discord-filled ti-fw"></i><span :class="$style.itemText">Neo's Discord</span>
 		</button>
@@ -93,10 +89,6 @@ function more() {
 	const { dispose } = os.popup(defineAsyncComponent(() => import('@/components/MkLaunchPad.vue')), {}, {
 		closed: () => dispose(),
 	});
-}
-
-function openFavoriya() {
-	window.open('https://favoriya.neos21.net', '_blank', 'noopener');
 }
 
 function openDiscord() {
@@ -145,6 +137,7 @@ function openDiscord() {
 	display: inline-block;
 	width: 38px;
 	aspect-ratio: 1;
+	border-radius: 8px;
 }
 
 .bottom {

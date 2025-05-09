@@ -72,7 +72,7 @@
 - 2025-01-25
     - フロントエンドの `pnpm dev` スクリプトに関して `vite --host` オプションを追加
         - `packages/frontend/package.json`
-    - サイドメニューに「カスタム絵文字」「Favoriya」「Neo's Discord」リンクを追加
+    - サイドメニューに「カスタム絵文字」「Neo's Discord」リンクを追加
         - `packages/frontend/src/ui/_common_/navbar.vue`
         - `packages/frontend/src/ui/classic.sidebar.vue`
         - `packages/frontend/src/ui/_common_/navbar-for-mobile.vue`

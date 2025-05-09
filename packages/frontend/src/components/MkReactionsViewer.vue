@@ -106,7 +106,7 @@ watch([() => props.note.reactions, () => props.maxNumber], ([newSource, maxNumbe
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	margin: 0 -2px;
+	gap: 4px;
 
 	&:empty {
 		display: none;
